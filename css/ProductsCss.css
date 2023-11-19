@@ -1,0 +1,13 @@
+.slider-container {
+    width: 50%; /* Đặt kích thước của container */
+    margin: auto; /* Đưa container ra giữa trang */
+}
+.slider img {
+    max-width: 70%; /* Giảm kích thước của ảnh */
+    height: auto;
+    margin: 0 auto; /* Đưa ảnh ra giữa slide */
+}
+.slider {
+    text-align: center; /* Căn giữa văn bản trong slider */
+}
+
