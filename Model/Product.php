@@ -7,8 +7,9 @@ class Product {
     public $Description;
     public $StockQuantity;
     public $img;
+    public $brand;
 
-    public function __construct($ProductID, $ProductName, $CategoryID, $Price, $Description, $StockQuantity,$img) {
+    public function __construct($ProductID, $ProductName, $CategoryID, $Price, $Description, $StockQuantity,$img,$brand) {
         $this->ProductID = $ProductID;
         $this->ProductName = $ProductName;
         $this->CategoryID = $CategoryID;
@@ -16,6 +17,7 @@ class Product {
         $this->Description = $Description;
         $this->StockQuantity = $StockQuantity;
         $this->img=$img;
+        $this->brand=$brand;
     }
 }
 ?>

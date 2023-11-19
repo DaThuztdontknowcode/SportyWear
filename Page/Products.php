@@ -11,6 +11,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 </head>
 <body>
+<?php include 'navbar.php'; ?>
 
 <!-- Nội dung của slider -->
 <div class="slider-container">
@@ -25,6 +26,10 @@
 
     // Kiểm tra và hiển thị dữ liệu
     if ($result->num_rows > 0) {
+        echo "<div class='slider-wrapper'>";
+        // Nút mũi tên chuyển slide - Bên trái
+        echo "<button class='prev'>Previous</button>";
+
         echo "<div class='slider'>";
         // Loop để hiển thị sản phẩm trong slider
         while($row = $result->fetch_assoc()) {
@@ -35,7 +40,8 @@
                 $row["Price"],
                 $row["Description"],
                 $row["StockQuantity"],
-                $row["image_url"]
+                $row["image_url"],
+                $row["BrandID"]
             );
 
             echo "<div>";
@@ -46,9 +52,9 @@
         }
         echo "</div>";
 
-        // Nút mũi tên chuyển slide
-        echo "<button class='prev'>Previous</button>";
+        // Nút mũi tên chuyển slide - Bên phải
         echo "<button class='next'>Next</button>";
+        echo "</div>";
     } else {
         echo "0 kết quả";
     }
@@ -76,4 +82,7 @@
 </div>
 
 </body>
+
+<?php include 'footer.php'; ?>
+
 </html>
