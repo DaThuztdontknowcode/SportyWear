@@ -1,13 +1,54 @@
+body{
+    overflow: hidden;
+}
+
+.Shoes h1{
+    margin: 0px;
+    margin-top: 5px;
+    padding: 0px;
+    text-align: center;
+}
 .slider-container {
-    width: 50%; /* Đặt kích thước của container */
+    width: 300px; /* Đặt kích thước của container */
     margin: auto; /* Đưa container ra giữa trang */
 }
 .slider img {
-    max-width: 70%; /* Giảm kích thước của ảnh */
-    height: auto;
+    max-width: 500px; /* Giảm kích thước của ảnh */
+    max-height: 400px; /* Đặt chiều cao tối đa của ảnh */
     margin: 0 auto; /* Đưa ảnh ra giữa slide */
+    object-fit: contain; /* Hiển thị toàn bộ ảnh trong kích thước được đặt */
 }
+
 .slider {
     text-align: center; /* Căn giữa văn bản trong slider */
 }
+.Button-Container{
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.prev,
+.next {
+    font-size: 18px;
+    background-color: #2c3e50; /* Màu nền của nút */
+    color: white; /* Màu chữ của nút */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100px; /* Đặt chiều dài của nút */
+    border-radius: 5px; /* Đặt đường cong cho các góc */
+}
 
+.prev {
+    margin-right: 10px; /* Đặt vị trí nút "Previous" từ bên trái */
+}
+
+.next {
+    margin-left: 10px; /* Đặt vị trí nút "Next" từ bên phải */
+}
+
+.prev:hover,
+.next:hover {
+    background-color: #34495e; /* Màu nền của nút khi di chuột qua */
+}
