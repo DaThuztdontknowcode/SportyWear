@@ -6,35 +6,69 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.navbar {
+.navbarr {
     
-    
+    top: 0;
+    position: fixed;
+ width: 100%;
+ z-index: 1;
     background-color: #333;
-    overflow: hidden;
 }
 
-.navbar ul {
-
-    display: inline-block;
+.navbarr ul li a{
+    text-decoration: none;
+}
+.navbarr ul li a .dropdownn-content a{
+    text-decoration: none;
+}
+.navbarr ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
-.navbar li {
+.navbarr li {
     float: left;
 }
 
-.navbar a {
-    display: block;
+.navbarr a, .dropbtnn {
+    display: inline-block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-.navbar a:hover {
+.navbarr a:hover, .dropdownn:hover .dropbtnn {
     background-color: #ddd;
     color: black;
+}
+
+.dropdownn {
+    display: inline-block;
+}
+
+.dropdownn-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdownn-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+}
+
+.dropdownn-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdownn:hover .dropdownn-content {
+    display: block;
 }
