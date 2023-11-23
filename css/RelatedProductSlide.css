@@ -1,0 +1,41 @@
+.related-products-grid {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.grid-container {
+    font-size: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.grid-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.product-item {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.grid-content {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.grid-content h3 {
+    font-size: 1.25rem;
+}
