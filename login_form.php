@@ -3,11 +3,11 @@
 
 session_start();
 if(isset($_POST['submit'])){
-    $name = mysqli_real_escape_string($conn,$_POST['name']);
-    $email = mysqli_real_escape_string($conn,$_POST['email']);
-    $pass = md5($_POST['password']);
-    $cpass = md5($_POST['password']);
-    $user_type = md5($_POST['user_type']);
+    $name = isset($_POST['name']) ? mysqli_real_escape_string($conn, $_POST['name']) : '';
+    $email = isset($_POST['email']) ? mysqli_real_escape_string($conn, $_POST['email']) : '';
+    $pass = isset($_POST['password']) ? md5($_POST['password']) : '';
+    $cpass = isset($_POST['password']) ? md5($_POST['password']) : '';
+    $user_type = isset($_POST['user_type']) ? md5($_POST['user_type']) : '';
     $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass'") or die('query failed');
     if(mysqli_num_rows($select) > 0){
         $row = mysqli_fetch_assoc($select);
