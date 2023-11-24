@@ -1,70 +1,63 @@
 <?php
-include 'config.php';
+include '../config.php';
+include '../Control/profileController.php';
+
 session_start();
 $user_id = $_SESSION['user_id'];
+$user_type = isset($_SESSION['user_type']) ? $_SESSION['user_type'] : '';
+$profileController = new ProfileController($conn);
 
 if (isset($_POST['update_image_btn'])) {
-    // Code for updating the profile image
     $update_image = $_FILES['update_image']['name'];
-    $update_image_size = $_FILES['update_image']['size'];
     $update_image_tmp_name = $_FILES['update_image']['tmp_name'];
-    $update_image_folder = 'uploaded_img/' . $update_image;
 
     if (!empty($update_image)) {
-        if ($update_image_size > 2000000) {
-            $message[] = 'image is too large';
-        } else {
-            move_uploaded_file($update_image_tmp_name, $update_image_folder);
+        $update_image_query = $profileController->updateProfileImage($user_id, $update_image, $update_image_tmp_name);
 
-            $image_update_query = mysqli_query($conn, "UPDATE `user_form` SET image = '$update_image' WHERE id = '$user_id'") or die('query failed');
-            if ($image_update_query) {
-                $message[] = 'image updated successfully!';
-            }
+        if ($update_image_query) {
+            $message[] = 'Image updated successfully!';
         }
     }
 }
 
 if (isset($_POST['update_password_btn'])) {
-    // Code for updating the password
     $old_pass = $_POST['old_pass'];
-    $update_pass = mysqli_real_escape_string($conn, md5($_POST['update_pass']));
-    $new_pass = mysqli_real_escape_string($conn, md5($_POST['new_pass']));
-    $confirm_pass = mysqli_real_escape_string($conn, md5($_POST['confirm_pass']));
+    $update_pass = md5($_POST['update_pass']);
+    $new_pass = md5($_POST['new_pass']);
+    $confirm_pass = md5($_POST['confirm_pass']);
 
     if (!empty($update_pass) || !empty($new_pass) || !empty($confirm_pass)) {
         if ($update_pass != $old_pass) {
-            $message[] = 'old password not matched!';
+            $message[] = 'Old password not matched!';
         } elseif ($new_pass != $confirm_pass) {
-            $message[] = 'confirm password not matched!';
+            $message[] = 'Confirm password not matched!';
         } else {
-            mysqli_query($conn, "UPDATE `user_form` SET password = '$confirm_pass' WHERE id = '$user_id'") or die('query failed');
-            $message[] = 'password updated successfully!';
+            $profileController->updateProfilePassword($user_id, $confirm_pass);
+            $message[] = 'Password updated successfully!';
         }
     }
 }
+
 if (isset($_POST['update_email_btn'])) {
-    // Code for updating the email
-    $update_email = mysqli_real_escape_string($conn, $_POST['update_email']);
-    
+    $update_email = $_POST['update_email'];
+
     if (!empty($update_email)) {
-        mysqli_query($conn, "UPDATE `user_form` SET email = '$update_email' WHERE id = '$user_id'") or die('query failed');
-        $message[] = 'email updated successfully!';
+        $profileController->updateProfileEmail($user_id, $update_email);
+        $message[] = 'Email updated successfully!';
     } else {
-        $message[] = 'email cannot be empty!';
+        $message[] = 'Email cannot be empty!';
     }
 }
+
 if (isset($_POST['update_name_btn'])) {
-    // Code for updating the username
-    $update_name = mysqli_real_escape_string($conn, $_POST['update_name']);
-    mysqli_query($conn, "UPDATE `user_form` SET name = '$update_name' WHERE id = '$user_id'") or die('query failed');
-    $message[] = 'username updated successfully!';
+    $update_name = $_POST['update_name'];
+    $profileController->updateProfileName($user_id, $update_name);
+    $_SESSION['admin_name'] = $update_name; 
+    $message[] = 'adminname updated successfully!';
 }
 
-// Fetch user data after updates
-$select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
-if (mysqli_num_rows($select) > 0) {
-    $fetch = mysqli_fetch_assoc($select);
-}
+
+$fetch = $profileController->getUserData($user_id);
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +68,7 @@ if (mysqli_num_rows($select) > 0) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Profile</title>
-    <link rel="stylesheet" href="css/style-update-profile.css">
+    <link rel="stylesheet" href="../css/style-update-profile.css">
 </head>
 
 <body>
@@ -89,17 +82,17 @@ if (mysqli_num_rows($select) > 0) {
             echo '<img src="uploaded_img/' . $fetch['image'] . '">';
         }
         if (isset($message)) {
-            foreach ($message as $message) {
-                echo '<div class="message">' . $message . '</div>';
+            foreach ($message as $msg) {
+                echo '<div class="message">' . $msg . '</div>';
             }
         }
         ?>
         <div class="columns">
             <div class="column">
                 <div class="inputBox">
-                    <span>Username:</span>
+                    <span>Adminname:</span>
                     <input type="text" name="update_name" value="<?php echo $fetch['name']; ?>" class="box">
-                    <input type="submit" value="Update Username" name="update_name_btn" class="btn">
+                    <input type="submit" value="Update adminname" name="update_name_btn" class="btn">
                 </div>
                 <div class="inputBox">
                     <span>Email:</span>
@@ -125,10 +118,9 @@ if (mysqli_num_rows($select) > 0) {
                 </div>
             </div>
         </div>
-        <a href="user_page.php" class="delete-btn">Go Back</a>
+        <a href="admin_page.php" class="delete-btn">Go Back</a>
     </form>
 </div>
-
 
 </body>
 
