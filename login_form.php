@@ -14,11 +14,11 @@ if(isset($_POST['submit'])){
         if($row['user_type'] == 'admin'){
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['admin_name'] = $row['name']; 
-            header('location: admin_page.php');
+            header('location: index.php');
         } else {
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['user_name'] = $row['name']; 
-            header('Location: user_page.php');
+            header('Location: index.php');
         }
     } else {
         $error[] = 'Incorrect email or password';
