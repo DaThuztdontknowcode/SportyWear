@@ -35,6 +35,14 @@
                     <p class="lead">Price: $<?= $product->Price ?></p>
                     <p>Description: <?= $product->Description ?></p>
                     <!-- Các thông tin khác của sản phẩm có thể được hiển thị ở đây -->
+
+                    <!-- Thêm button "Add to Cart" -->
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="product_id" value="<?= $product->ProductID ?>">
+                        <input type="hidden" name="product_name" value="<?= $product->ProductName ?>">
+                        <input type="hidden" name="product_price" value="<?= $product->Price ?>">
+                        <input type="submit" value="Add to Cart" class="btn btn-primary">
+                    </form>
                 </div>
             </div>
             <?php
@@ -46,5 +54,4 @@
     }
 
     // Đóng kết nối
-  
-    ?>
+?>
