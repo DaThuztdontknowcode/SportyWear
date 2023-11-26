@@ -21,8 +21,13 @@
 
 .product-item {
     text-decoration: none;
-    color: #333;
+    color: #000;
     display: block;
+}
+.product-item:hover {
+    text-decoration: none;
+    color: #000;
+    
 }
 
 .product-item img {
@@ -38,4 +43,8 @@
 
 .grid-content h3 {
     font-size: 1.25rem;
+}
+
+.Related_Wrap{
+    margin-top: 25px;
 }

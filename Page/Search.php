@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Your custom CSS file -->
     <link rel="stylesheet" href="../css/AllShoes.css">
+
     
 </head>
 
@@ -20,28 +21,12 @@
     <div class="container mt-5 Section">
         <div class="Title_container">
         <?php
-        if (isset($_GET['category'])) {
-            $selectedCategory = $_GET['category'];
+        if (isset($_GET['query'])) {
+            $SearchText = $_GET['query'];
         
-            // Display the category title based on the selected category
-            switch ($selectedCategory) {
-                case 1:
-                    echo '<h1 class="category-title">Shoes</h1>';
-                    break;
-                case 2:
-                    echo '<h1 class="category-title">Shirt</h1>';
-                    break;
-                case 3:
-                    echo '<h1 class="category-title">Short</h1>';
-                    break;
-                default:
-                    // Handle other categories as needed
-                    break;
-            }
-        }else{
-            echo '<h1 class="category-title">All products</h1>';
-              
+                    echo '<h1 class="category-title">Result for: '.$SearchText.'</h1>';
         }
+            
         
         
         
@@ -50,7 +35,7 @@
         </div>
         
         <div class="row">
-        <?php include '../Control/AllProductShoes.php'; ?>
+        <?php include '../Control/SearchControl.php'; ?>
         </div>
     </div>
     <!-- Bootstrap JS and Popper.js -->

@@ -12,25 +12,101 @@
 </head>
 
 <body>
-<?php include 'navbar.php'; ?>
+<?php include 'navbar.php';?>
+<div class="Shirt Section">
+    
+  
+        <div class="Wrap_Products">
+        <div class="Title-Container">
+    <h1>Shirt</h1>
+    </div>
+<!-- Nội dung của slider -->
+<div class="slider-container">
+<?php include '../Control/ShirtSlider.php'; ?>
+
+    </div>
+        <div class="product-grid">
+        <?php include '../Control/ShirtGrid.php'; ?>
+             </div>
+             <div class="see-all-container">
+            <a href="./all_products.php?category=2" class="see-all-link">See All</a>
+     
+        </div>
+        </div>
+
+    <!-- Kịch bản JavaScript để khởi tạo Slick Carousel -->
+  
+
+</div>
+
+<div class="Short Section">
+   
+    
+        <div class="Wrap_Products">
+        <div class="Title-Container">
+    <h1>Short</h1>
+    </div>
+<!-- Nội dung của slider -->
+<div class="slider-container">
+<?php include '../Control/ShortSlide.php'; ?>
+
+    </div>
+        <div class="product-grid">
+        <?php include '../Control/ShortGrid.php'; ?>
+             </div>
+             <div class="see-all-container">
+            <a href="./all_products.php?category=6" class="see-all-link">See All</a>
+     
+        </div>
+        </div>
+
+    <!-- Kịch bản JavaScript để khởi tạo Slick Carousel -->
+  
+
+</div>
+
 <div class="Shoes Section">
-    <div class="Title-Container">
-    <h1>Hot</h1>
+    
+        <div class="Wrap_Products">
+        <div class="Title-Container">
+    <h1>Shoes</h1>
     </div>
 <!-- Nội dung của slider -->
 <div class="slider-container">
 <?php include '../Control/product_slider.php'; ?>
 
     </div>
-    <div class="Title-Container">
-            <h1>Shoes</h1>
-        </div>
+    
         <div class="product-grid">
         <?php include '../Control/product_grid.php'; ?>
              </div>
              <div class="see-all-container">
+            <a href="./all_products.php?category=1" class="see-all-link">See All</a>
+     
+        </div>
+        </div>
+    
+
+    <!-- Kịch bản JavaScript để khởi tạo Slick Carousel -->
+  
+
+</div>
+
+<div class="Explore Section">
+    
+        <div class="Wrap_Products">
+        <div class="Title-Container">
+    <h1>Explore</h1>
+    </div>
+<!-- Nội dung của slider -->
+    
+        <div class="product-grid">
+        <?php include '../Control/ExplorerGrid.php'; ?>
+             </div>
+             <div class="see-all-container">
             <a href="./all_products.php" class="see-all-link">See All</a>
      
+        </div>
         </div>
     
 

@@ -6,7 +6,7 @@
   require_once '../Model/Product.php';
 
   // Truy vấn dữ liệu từ cơ sở dữ liệu
-  $sql = "SELECT * FROM Products where CategoryId = 1";
+  $sql = "SELECT * FROM Products where CategoryId = 6";
   $result = $conn->query($sql);
 
   // Kiểm tra và hiển thị dữ liệu
@@ -15,7 +15,7 @@
       // Nút mũi tên chuyển slide - Bên trái
      
 
-      echo "<div class='slider Shoe_Slider'>";
+      echo "<div class='slider Short_Slider'>";
       // Loop để hiển thị sản phẩm trong slider
       while($row = $result->fetch_assoc()) {
           $product = new Product(
@@ -32,7 +32,7 @@
           
           echo "<a href='./product_detail.php?product_id=" . $product->ProductID . "' class='product-item'>";
           echo "<img src='" . $product->img . "' alt='" . $product->ProductName . "'>";
-          echo "<h3 class='Product_Name'>" . $product->ProductName . "</h3>";
+          echo "<h3 class='Product_Name' >" . $product->ProductName . "</h3>";
           echo "</a>";
           
       }
@@ -43,9 +43,9 @@
         echo "<div class='Button-Container'>";
 
 
-      echo "<button class='prev Prev_Shoe'>Previous</button>";
+      echo "<button class='prev prev_Short'>Previous</button>";
       // Nút mũi tên chuyển slide - Bên phải
-      echo "<button class='next Next_Shoe'>Next</button>";
+      echo "<button class='next next_Short'>Next</button>";
       echo "</div>";
       
   } else {
@@ -57,15 +57,15 @@
   ?>
     <script>
         $(document).ready(function(){
-            $('.Shoe_Slider').slick({
+            $('.Short_Slider').slick({
                 // Các tùy chọn của Slick Carousel
                 infinite: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 centerMode: true, // Đưa slide hiện tại ra giữa
                 variableWidth: true, // Tự động tính chiều rộng của slide
-                prevArrow: $('.Prev_Shoe'),
-                nextArrow: $('.Next_Shoe')
+                prevArrow: $('.prev_Short'),
+                nextArrow: $('.next_Short')
             });
         });
 
