@@ -12,6 +12,7 @@
 </head>
 
 <body>
+<?php include 'navbar.php';?>
 <div class="Shirt Section">
     
   

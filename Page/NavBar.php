@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/all.min.css">
+ 
 </head>
 <body>
 
@@ -33,11 +34,18 @@
             </div>
         </li>
         <li><a href="#">Cart</a></li>
+    
         <li class="dropdownn" style="float: right;"> 
             <a href="#" class="dropbtnn" id="profile">View Profile</a>
             <div class="dropdownn-content">
                 <a href="../Page/user_page.php">My Profile</a>
             </div>
+        </li>
+        <li class="search-bar" >
+            <form action="../Page/search.php" method="GET">
+                <input type="text" name="query" placeholder="Search...">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
         </li>
     </ul>
 </nav>

@@ -81,3 +81,26 @@ body {
     display: block;
 }
 
+.search-bar {
+    float: right !important;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar form {
+    display: flex;
+}
+
+.search-bar input[type="text"] {
+    padding: 7px 30px;
+    
+    margin: 0;
+}
+
+.search-bar button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
