@@ -57,3 +57,8 @@ h1{
     max-height: 300px; /* Set your desired maximum height */
     width: auto; /* Ensure the width adjusts to maintain aspect ratio */
 }
+
+.NoResult{
+    height: 50vh;
+    width: auto;
+}

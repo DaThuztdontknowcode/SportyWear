@@ -36,7 +36,7 @@ if (isset($_GET['query'])) {
         }
     } else {
         // Display "No result" message with appropriate footer styling
-        echo '<div class="NoResult">';
+        echo '<div class="col-md-12 NoResult">';
         echo '<h1>No result for your search</h1>';
         echo '</div>';
     }

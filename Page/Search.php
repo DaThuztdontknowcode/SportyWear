@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Your custom CSS file -->
     <link rel="stylesheet" href="../css/AllShoes.css">
-    <link rel="stylesheet" href="../css/NoResultFound.css">
+
     
 </head>
 
