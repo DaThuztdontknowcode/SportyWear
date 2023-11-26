@@ -17,6 +17,8 @@ if(!isset($_SESSION['admin_name'])){
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+<?php include 'AdminNavbar.php'; ?>   
+
     <div class="container">
     <div class="content">
       <div class="img">

@@ -26,9 +26,8 @@ if (!isset($_SESSION['user_name'])) {
 
 </head>
 <body>
-   
+<?php include 'navbar.php'; ?>   
 <div class="container">
-
    <div class="content">
       <div class="img">
    <?php
@@ -54,4 +53,6 @@ if (!isset($_SESSION['user_name'])) {
 </div>
 
 </body>
+<?php include 'footer.php'; ?>
+
 </html>

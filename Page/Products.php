@@ -6,12 +6,10 @@
     <title>Product Slider</title>
     <!-- Thêm các tệp CSS và JS của Slick Carousel -->
    <link rel="stylesheet" href="../css/ProductsCss.css">
-   
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 </head>
-<?php include 'navbar.php'; ?>
 
 <body>
 <div class="Shirt Section">
