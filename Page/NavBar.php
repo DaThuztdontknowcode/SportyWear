@@ -14,9 +14,22 @@
         <li class="dropdownn">
             <a href="../Page/Products.php" class="dropbtnn">Product</a>
             <div class="dropdownn-content">
-                <a href="../Page/all_products.php">Shoes</a>
-                <a href="#">Shirt</a>
-                <a href="#">Short</a>
+                <a href="../Page/all_products.php?category=1">Shoe</a>
+                
+                <a href="../Page/all_products.php?category=2">T-Shirt</a>
+                <!-- Add more items -->
+                <a href="../Page/all_products.php?category=3">Top</a>
+                <a href="../Page/all_products.php?category=4">Sock</a>
+                <a href="../Page/all_products.php?category=5">Tight</a>
+                <a href="../Page/all_products.php?category=6">Short</a>
+                <a href="../Page/all_products.php?category=7">Jacket</a>
+                <a href="../Page/all_products.php?category=8">Headwear</a>
+                <a href="../Page/all_products.php?category=9">Bra</a>
+                <a href="../Page/all_products.php?category=10">Skirt dress</a>
+                <a href="../Page/all_products.php?category=11">Polo</a>
+                <a href="../Page/all_products.php?category=12">Sandal</a>
+                <a href="../Page/all_products.php?category=13">Sweatshirt</a>
+                <a href="../Page/all_products.php?category=14">Accessories</a>
             </div>
         </li>
         <li><a href="#">Cart</a></li>

@@ -1,3 +1,25 @@
 .Section{
     padding-top: 20px;
 }
+.img-fluid{
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.Cart_Button{
+    border: none;
+    background-color: #000;
+    color:white;
+}
+
+.Cart_Button:hover{
+    background-color: #000;
+    color:white;
+}
+
+.Cart_Button:active{
+    background-color: #000;
+    color:white;
+}

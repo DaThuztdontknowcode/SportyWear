@@ -41,7 +41,7 @@
                         <input type="hidden" name="product_id" value="<?= $product->ProductID ?>">
                         <input type="hidden" name="product_name" value="<?= $product->ProductName ?>">
                         <input type="hidden" name="product_price" value="<?= $product->Price ?>">
-                        <input type="submit" value="Add to Cart" class="btn btn-primary">
+                        <input type="submit" value="Add to Cart" class="btn btn-primary Cart_Button">
                     </form>
                 </div>
             </div>

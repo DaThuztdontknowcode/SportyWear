@@ -6,7 +6,7 @@
   require_once '../Model/Product.php';
 
   // Truy vấn dữ liệu từ cơ sở dữ liệu
-  $sql = "SELECT * FROM Products where CategoryId = 1";
+  $sql = "SELECT * FROM Products where CategoryId = 2";
   $result = $conn->query($sql);
 
   // Kiểm tra và hiển thị dữ liệu
@@ -15,7 +15,7 @@
       // Nút mũi tên chuyển slide - Bên trái
      
 
-      echo "<div class='slider Shoe_Slider'>";
+      echo "<div class='slider Shirt_Slider'>";
       // Loop để hiển thị sản phẩm trong slider
       while($row = $result->fetch_assoc()) {
           $product = new Product(
@@ -43,9 +43,9 @@
         echo "<div class='Button-Container'>";
 
 
-      echo "<button class='prev Prev_Shoe'>Previous</button>";
+      echo "<button class='prev Prev_Shirt'>Previous</button>";
       // Nút mũi tên chuyển slide - Bên phải
-      echo "<button class='next Next_Shoe'>Next</button>";
+      echo "<button class='next Next_Shirt'>Next</button>";
       echo "</div>";
       
   } else {
@@ -57,15 +57,15 @@
   ?>
     <script>
         $(document).ready(function(){
-            $('.Shoe_Slider').slick({
+            $('.Shirt_Slider').slick({
                 // Các tùy chọn của Slick Carousel
                 infinite: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 centerMode: true, // Đưa slide hiện tại ra giữa
                 variableWidth: true, // Tự động tính chiều rộng của slide
-                prevArrow: $('.Prev_Shoe'),
-                nextArrow: $('.Next_Shoe')
+                prevArrow: $('.Prev_Shirt'),
+                nextArrow: $('.Next_Shirt')
             });
         });
 
