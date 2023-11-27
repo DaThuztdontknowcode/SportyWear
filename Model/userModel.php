@@ -34,5 +34,6 @@ class UserModel {
             return false; // Incorrect email or password
         }
     }
+
 }
 ?>

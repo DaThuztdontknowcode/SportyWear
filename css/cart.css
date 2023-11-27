@@ -1,0 +1,23 @@
+/* Shopping Cart */
+
+.shopping-cart{
+    margin: auto;
+ }
+ 
+ .shopping-cart table {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+ }
+ 
+ table {
+    border-collapse: collapse;
+ }
+ 
+ .shopping-cart table tr th, td {
+    border: 2px solid #dddddd;
+ }
+ 
+ .shopping-cart table tr th {
+    background-color: #1967db;
+ }
