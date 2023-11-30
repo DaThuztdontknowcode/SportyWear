@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/all.min.css">
     <!-- Start of Async Drift Code -->
@@ -69,10 +70,11 @@ drift.load('utsez2c7b623');
                 <a href="../Page/user_page.php">My Profile</a>
             </div>
         </li>
-        <li class="search-bar" >
-            <form action="../Page/search.php" method="GET">
-                <input type="text" name="query" placeholder="Search...">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <ul>
+        <li class="search-bar">
+            <form action="" id="search-bar">
+                <input type="text" name="query" placeholder="Search..." id="search-text">
+                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </li>
     </ul>

@@ -1,0 +1,405 @@
+*{
+    box-sizing: border-box;
+}
+
+:root {
+    --bggradient: linear-gradient(to bottom,#646464,#070707);
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    background: var(--bggradient);
+}
+header a {
+    font-family: var(--sniglet-font);
+    color: white;
+}
+
+
+header a {
+    font-size: 0.9em;;
+}
+
+header .row .col-md-7 {
+    padding: 22vmin 1vmin;
+    padding-bottom: 35vmin;
+}
+
+header .row .col-md-5 {
+    padding: 4.2vmin 1vmin;
+}
+
+header .row .col-md-5 img {
+    width: 90%;
+}
+
+header .container .col-md-7 h6 {
+    padding: 1vmin;
+    letter-spacing: 4px;
+}
+
+header .container .col-md-7 {
+font-family: "Rubik",sans-serif;
+}
+
+header .container .col-md-7 h1 {
+    padding: 0.1em 0em;
+    font-size: 8.5vmin;
+    font-weight: bold;
+}
+
+header .container .col-md-7 p {
+    padding: 1vmin 5vmin;
+}
+
+.primary-btn {
+    border-radius: 30px;
+    font-weight: bold;
+}
+.view {
+    display: block; 
+    text-align: center;
+}
+
+.view button {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+/*Section 1*/
+
+.section-1 {
+    padding: 20vmin 0;
+}
+
+.section-1 .row .col-md-6 img{
+    opacity: 0.8;
+    width: 80%;
+    border-radius: 0.2em;
+}
+
+.section-1 .row .col-md-6:last-child {
+    position: relative;
+}
+
+.section-1 .row .col-md-6 .panel {
+    position: absolute;
+    background: white;
+    border-radius: 3px;
+    text-align: left;
+    box-shadow: 0px 25px 42px black;
+    top: 7vmin;
+    left: -18vmin;
+    padding: 13vmin 5vmin 20vmin 10vmin;
+}
+
+.section-1 .row .col-md-6 .panel p {
+    opacity: 0.5;
+}
+
+/*Section 2*/
+.cover {
+    width: 100%;
+    height: 55vmin;
+    background: color( linear-gradient(to bottom,#000000,#070707));
+    background-position: -24rem -19rem;
+    background-size: 150%;
+    position: relative;
+}
+
+.cover .content {
+    width: 100%;
+    height: 100%;
+    padding-top:19vmin ;
+    background: rgba(0, 0,0 , 0.7)
+}
+
+.cover .content > h1 {
+    font-size: 6vmin;
+    color: white;
+}
+
+.cover .content > p{
+    font-size: 2vmin;
+    color: white;
+}
+
+.numbers {
+    margin-top: -15vmin;
+}
+
+.numbers .rect {
+    position: relative;
+    background: white;
+    width: 17rem;
+    height: 12rem;
+    padding-top: 3.5vmin;
+    margin: 1rem;
+    border-radius: 0.5em;
+    box-shadow: 1px 2px 50px 0px rgba(255, 0,0 , 0.349);
+}
+
+.numbers .rect h1 {
+    font-size: 5rem;
+    color: tomato;
+}
+
+.purchase .card .card {
+    width: 22rem;
+    margin: 3vmin 3vmin;
+
+}
+
+.purchase h1 {
+    padding-top: 15vmin;
+    padding-bottom: 0.1em;
+}
+
+.purchase p {
+    font-size: 3vmin;
+    padding-bottom: 10vmin;
+}
+
+.card div {
+    padding: 0;
+    margin: 0;
+}
+
+.card .title {
+    background: rgba(208, 241,241 , 0.119);
+    padding: 1.4em 2.5em;
+    font-size: 2vmin;
+
+}
+.card .card-text {
+    padding: 2.5rem 3rem;
+    font-size: 1rem;
+}
+
+.card-body .pricing {
+    background: rgba(208, 241,241 , 0.119);
+    border-top-right-radius:170px ;
+    border-top-left-radius:170px ;
+}
+
+.card-body .pricing h1 {
+    font-size: 10vmin;
+    padding: 1em 0.5em;
+}
+
+/* section 3*/
+
+/* .section-3 {
+    margin-top: 15vmin ;
+    height: 70vmin;
+    background: var(--bggradient);
+}
+
+.section-3 .desktop {
+    background : white;
+    display: inline-block;
+    border-radius: 3em ;
+    padding: 2vmin 4.5vmin;
+    margin: 1em;
+}
+
+.section-3 .col-md-12 h1 {
+    padding: 2em 0 0.5em 0 ;
+    color: white;
+    font-size: 6vmin;
+}
+
+.section-3 .col-md-12 p {
+    padding: 0 4em ;
+    padding-bottom: 2em;
+    font-size: 3vmin;
+    color: white;
+}
+
+.section-3 .desktop h3 {
+    font-size: 4vmin ;
+}
+
+.section-3 .desktop p {
+    font-size: 2vmin ;
+} */
+/* Thêm vào CSS hoặc vào file style của bạn */
+#section-3 {
+    background: var(--bggradient);
+    height: 100vmin; /* Tăng chiều cao của section */
+    display: flex;
+    align-items: center;
+}
+
+.image-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.image-column {
+    flex: 1;
+    margin: 10px;
+}
+
+.image-column img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-column:hover img {
+    transform: scale(1.1);
+}
+/* Thêm vào CSS hoặc vào file style của bạn */
+#section-3 .image-column img {
+    width: 100%;
+    height: auto;
+    opacity: 0; /* Ẩn ảnh ban đầu */
+    transform: translateY(20px); /* Khoảng cách hiệu ứng */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+#section-3 .image-column img.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Section 4*/
+.section-4 .container h1 {
+    font-size: 6vmin;
+    padding-top: 14vmin;
+}
+
+.section-4 .team{
+    padding: 10vmin 4vmin;
+}
+
+.section-4 .card {
+    width: 22em;
+    margin-top: 10vmin;
+}
+
+.section-4 .card .card-text {
+    padding: 0.5e;
+}
+ .section-4 .card-body a {
+    font-size: 1.5em;
+ }
+
+ .section-4 .carousel-item {
+    padding-left: 3rem;
+ }
+
+ .border-radius {
+    border-radius:340px;
+    width: 60%;
+ }
+
+ footer {
+    background: rgba(0, 0,0 , 0.815);
+    padding: 14vmin 18vmin;
+ }
+
+ footer p span {
+    color: #ff512f;
+ }
+
+ footer input {
+    border: none !important;
+ }
+ footer input::placeholder {
+    color: white !important;
+ }
+
+ footer .input-group .input-group-text {
+    background: var(--bggradient);
+ }
+
+ footer .column i {
+    color: #dd2476;
+ }
+
+ footer .column i {
+    padding: 0 0.5em;
+ }
+
+ .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0,0 , 0.815);
+    z-index: 9999;
+    transition: all 1.5s ease;
+ }
+ #scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #333333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 999;
+    width: 50px;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #999999;
+}
+
+/* Thêm vào file homestyle.css hoặc một file CSS khác */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Bạn có thể điều chỉnh khoảng cách hiệu ứng */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Tùy chỉnh giao diện của nút liên kết */
+a.btn-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Tùy chỉnh giao diện của nút */
+.btn-custom {
+    background-color: #8b8b8b;
+    color: #fff;
+    border: 1px solid #888888;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover cho nút */
+.btn-custom:hover {
+    background-color: #e9536c;
+}
+.btn-custom:hover  {
+    color: #fff;
+}
+.image-container {
+    overflow: hidden;
+}
+
+.zoom-image {
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container:hover .zoom-image {
+    transform: scale(1.1);
+    transform-origin: center center;
+}

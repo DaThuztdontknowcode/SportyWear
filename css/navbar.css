@@ -11,7 +11,7 @@ body {
     position: fixed;
     width: 100%;
     z-index: 1;
-    background-color: #000;
+    background-color: #333;
 }
 
 .navbarr ul li a {
@@ -81,20 +81,29 @@ body {
     display: block;
 }
 
+/* Adjustments for search-bar and submit button */
 .search-bar {
-    float: right !important;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
+    border-radius: 20px; /* Adjust the border-radius as needed */
+    overflow: hidden; /* Ensure rounded corners are applied */
+    padding: 5px 0 20px 0; /* Adjust padding for top, right, bottom, left */
 }
 
 .search-bar form {
     display: flex;
+    align-items: center;
 }
 
 .search-bar input[type="text"] {
     padding: 7px 30px;
-    
     margin: 0;
+    width: 600px; /* Adjust the width as needed */
+    border: none; /* Remove default input border */
+    border-radius: 20px; /* Same border-radius as the parent .search-bar */
 }
 
 .search-bar button {
@@ -103,4 +112,7 @@ body {
     border: none;
     padding: 10px;
     cursor: pointer;
+    margin-left: 10px; /* Add margin to separate input and button */
+    border-top-right-radius: 20px; /* Adjust the border radius for the button */
+    border-bottom-right-radius: 20px; /* Adjust the border radius for the button */
 }
