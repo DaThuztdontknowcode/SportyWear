@@ -3,21 +3,42 @@
 .shopping-cart{
     margin: auto;
  }
+
+.shopping-cart .heading {
+   display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    font-size: 50px;
+    color: black;
+}
  
- .shopping-cart table {
+.shopping-cart table {
     width: 80%;
     text-align: center;
     margin: auto;
  }
  
- table {
+table {
     border-collapse: collapse;
  }
  
- .shopping-cart table tr th, td {
+.shopping-cart table tr th, td {
     border: 2px solid #dddddd;
  }
  
- .shopping-cart table tr th {
-    background-color: #1967db;
+.shopping-cart table tr th {
+   color: white;
+   background-color: #000;
+   padding: 10px 5px;
  }
+
+.edit-btn {
+   background-color: lightgreen;
+   color: #fff;
+ }
+
+.delete-btn {
+   background-color: lightcoral;
+   color: #fff;
+ }
+

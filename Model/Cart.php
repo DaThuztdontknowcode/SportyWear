@@ -1,18 +1,15 @@
 <?php
-class CartProduct
+class Cart
 {
     // thiếu thuộc tính
     public $id_cart;
-    public $Description;
-    public $ProductName;
-    public $Price;
 
-    public function __construct($id_cart, $ProductName, $Price, $Description)
+    public $id_user;
+
+    public function __construct($id_cart, $id_user)
     {
         $this->id_cart = $id_cart;
-        $this->Description = $Description;
-        $this->ProductName = $ProductName;
-        $this->Price = $Price;
+        $this->id_user = $id_user;
     }
 }
 ?>

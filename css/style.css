@@ -150,4 +150,19 @@ body{
    font-size: 20px;
    padding:10px;
 }
+
+.btn {
+   display: flex-inline ;
+   justify-content: center;
+   align-items: center;
+   padding: 5px 10px;
+   border-radius: 5px;
+   margin: 5px;
+   width: 80px;
+}
+
+.btn a {
+   color: black !important;
+   font-weight: 500;
+}
 /*  */
