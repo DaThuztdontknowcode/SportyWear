@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/all.min.css">
- 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -41,10 +42,11 @@
                 <a href="../Page/user_page.php">My Profile</a>
             </div>
         </li>
-        <li class="search-bar" >
-            <form action="../Page/search.php" method="GET">
-                <input type="text" name="query" placeholder="Search...">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <ul>
+        <li class="search-bar">
+            <form action="" id="search-bar">
+                <input type="text" name="query" placeholder="Search..." id="search-text">
+                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </li>
     </ul>
