@@ -177,3 +177,24 @@ body{
 .Shirt{
     margin-top: 45px;
 }
+select,
+input {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 20%;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15%;
+}
+
+button:hover {
+  background-color: #2980b9;
+}

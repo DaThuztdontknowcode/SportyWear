@@ -17,7 +17,9 @@
 </head>
 
 <body>
-<div class="container mt-5 Section">
+
+
+    <div class="container mt-5 Section">
     <div class="sort-container">
     <select id="sortPrice" onchange="sortProducts()">
         <option value="">Sort by</option>
@@ -35,7 +37,6 @@
         window.location.href = newUrl.toString();
     }
 </script>
-    <div class="container mt-5 Section">
         <div class="Title_container">
         <?php
         if (isset($_GET['category'])) {
@@ -69,7 +70,6 @@
         
         <div class="row">
         <?php include '../Page/filter_results.php';?>
-
         </div>
     </div>
     <!-- Bootstrap JS and Popper.js -->

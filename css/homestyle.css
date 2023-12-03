@@ -225,10 +225,26 @@ header .container .col-md-7 p {
 .section-3 .desktop p {
     font-size: 2vmin ;
 } */
-/* Thêm vào CSS hoặc vào file style của bạn */
+.section-3 .section-title {
+    text-align: center;
+    margin-top: 20px; /* Thêm khoảng cách phía trên tiêu đề */
+}
+
+.section-3 .section-title h2 {
+    font-family: 'Arial', sans-serif; /* Hoặc bất kỳ font thể thao nào bạn muốn sử dụng */
+    color: white;
+    font-size: 48px; /* Điều chỉnh kích thước phông chữ theo ý muốn */
+}
+
+@media (max-width: 768px) {
+    .section-3 .section-title h2 {
+        font-size: 32px;
+    }
+}
+
 #section-3 {
     background: var(--bggradient);
-    height: 100vmin; /* Tăng chiều cao của section */
+    height: 100vmin; 
     display: flex;
     align-items: center;
 }
@@ -254,12 +270,11 @@ header .container .col-md-7 p {
 .image-column:hover img {
     transform: scale(1.1);
 }
-/* Thêm vào CSS hoặc vào file style của bạn */
 #section-3 .image-column img {
     width: 100%;
     height: auto;
-    opacity: 0; /* Ẩn ảnh ban đầu */
-    transform: translateY(20px); /* Khoảng cách hiệu ứng */
+    opacity: 0;
+    transform: translateY(20px); 
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
@@ -267,6 +282,28 @@ header .container .col-md-7 p {
     opacity: 1;
     transform: translateY(0);
 }
+
+.explore-btn {
+    position: relative;
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin: 10px auto;
+    background-color: #707070;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.explore-btn:hover {
+    background-color: #f53333;
+}
+
+
+
 
 
 /* Section 4*/

@@ -34,17 +34,11 @@
                 <a href="../Page/all_products.php?category=14">Accessories</a>
             </div>
         </li>
-        <li><a href="#">Cart</a></li>
-    
-        <li class="dropdownn" style="float: right;"> 
-            <a href="#" class="dropbtnn" id="profile">View Profile</a>
-            <div class="dropdownn-content">
-                <a href="../Page/user_page.php">My Profile</a>
-            </div>
-        </li>
+        <li style="float: right;"><a href="#"><i class="fa-solid fa-shopping-cart"></i></a></li>
+        <li style="float: right;"><a href="../Page/user_page.php"><i class="fa-solid fa-user"></i></a></li>
     <ul>
         <li class="search-bar">
-            <form action="" id="search-bar">
+            <form action="../Page/search.php"  method="GET" id="search-bar">
                 <input type="text" name="query" placeholder="Search..." id="search-text">
                 <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>

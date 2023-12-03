@@ -41,6 +41,14 @@
                         <input type="hidden" name="product_id" value="<?= $product->ProductID ?>">
                         <input type="hidden" name="product_name" value="<?= $product->ProductName ?>">
                         <input type="hidden" name="product_price" value="<?= $product->Price ?>">
+                        <label for="size">Size:</label>
+                        <select name="size" id="size">
+                            <?php
+                            for ($size = 36.5; $size <= 46; $size += 0.5) {
+                                echo "<option value='$size'>$size</option>";
+                            }
+                            ?>
+                        </select>
                         <input type="submit" value="Add to Cart" class="btn btn-primary Cart_Button">
                     </form>
                 </div>
