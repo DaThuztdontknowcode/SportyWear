@@ -40,5 +40,35 @@ table {
 .delete-btn {
    background-color: lightcoral;
    color: #fff;
+   margin: 0 20px;
  }
 
+/* edit-quantity */
+
+.edit-quantity {
+   display: flex;
+   flex-direction: row; 
+   justify-content: center;
+   align-items: center;
+   padding: 0 20px;
+}
+
+.quantity {
+   width: 35px;
+   margin-right: 10px;
+   border: 2px solid coral;
+   border-radius: 5px;
+}
+
+.btn-update {
+   padding: 5px 10px;
+   border-radius: 5px;
+   margin: 5px;
+   width: 80px;
+   font-style: bold;
+   background-color: lightgreen;
+}
+
+/* .edit-quantity input[type="submit"] {
+   background-color: coral;
+} */

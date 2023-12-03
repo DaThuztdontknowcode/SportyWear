@@ -10,12 +10,12 @@ class CartDetail
 
     public $Quantity;
 
-    public function __construct($id_cartDetail, $id_cart, $ProductID)
+    public function __construct($id_cartDetail, $id_cart, $ProductID, $Quantity)
     {
         $this->id_cartDetail = $id_cartDetail;
         $this->id_cart = $id_cart;
         $this->ProductID = $ProductID;
-        // $this->Quantity = $Quantity;
+        $this->Quantity = $Quantity;
     }
 }
 ?>

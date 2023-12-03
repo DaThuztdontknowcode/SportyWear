@@ -9,10 +9,10 @@ class DetailCartModel
         $this->conn = $conn;
     }
 
-    public function AddToCartDetail($id_cart, $ProductID)
+    public function AddToCartDetail($id_cart, $ProductID, $quantity)
     {
 
-        $insert = "INSERT INTO cartdetail(id_cart,ProductID) VALUES($id_cart,$ProductID)";
+        $insert = "INSERT INTO cartdetail(id_cart,ProductID,quantity) VALUES($id_cart,$ProductID,$quantity)";
 
         $result = mysqli_query($this->conn, $insert);
 
@@ -27,6 +27,16 @@ class DetailCartModel
 
         $result = mysqli_query($this->conn, $remove);
 
+        return $result;
+
+    }
+
+    public function UpdateCartDetail($id_cart, $ProductID, $new_quantity)
+    {
+        $update = "UPDATE cartdetail SET quantity = $new_quantity WHERE id_cart = $id_cart AND ProductID = $ProductID";
+        
+        $result = mysqli_query($this->conn, $update);
+ 
         return $result;
 
     }

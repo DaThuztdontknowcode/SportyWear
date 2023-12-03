@@ -31,33 +31,33 @@ if (isset($_GET['product_id'])) {
             $row["BrandID"]
         );
         ?>
-        <div class="row">
-            <div class="col-md-6">
-                <img src="<?= $product->img ?>" alt="<?= $product->ProductName ?>" class="img-fluid">
-            </div>
-            <div class="col-md-6">
-                <h1>
-                    <?= $product->ProductName ?>
-                </h1>
-                <p class="lead">Price: $
-                    <?= $product->Price ?>
-                </p>
-                <p>Description:
-                    <?= $product->Description ?>
-                </p>
+<div class="row">
+    <div class="col-md-6">
+        <img src="<?= $product->img ?>" alt="<?= $product->ProductName ?>" class="img-fluid">
+    </div>
+    <div class="col-md-6">
+        <h1>
+            <?= $product->ProductName ?>
+        </h1>
+        <p class="lead">Price: $
+            <?= $product->Price ?>
+        </p>
+        <p>Description:
+            <?= $product->Description ?>
+        </p>
 
-                <!-- Các thông tin khác của sản phẩm có thể được hiển thị ở đây -->
+        <!-- Các thông tin khác của sản phẩm có thể được hiển thị ở đây -->
 
-                <!-- Thêm button "Add to Cart" -->
-                <form action="addToCart.php" method="post">
-                    <input type="hidden" name="product_id" value="<?= $product->ProductID ?>">
-                    <input type="hidden" name="user_id" value="<?= $user_id ?>">
-                    <input type="number" name="quantity" min="1" value="1">
-                    <input type="submit" value="Add to Cart" name="dathang" class="btn btn-primary Cart_Button">
-                </form>
-            </div>
-        </div>
-        <?php
+        <!-- Thêm button "Add to Cart" -->
+        <form action="addToCart.php" method="post">
+            <input type="hidden" name="product_id" value="<?= $product->ProductID ?>">
+            <input type="hidden" name="user_id" value="<?= $user_id ?>">
+            <input type="number" name="quantity" min="1" value="1">
+            <input type="submit" value="Add to Cart" name="dathang" class="btn btn-primary Cart_Button">
+        </form>
+    </div>
+</div>
+<?php
     } else {
         echo "Sản phẩm không tồn tại.";
     }

@@ -1,3 +1,26 @@
+<?php
+require_once '../config.php';
+require_once '../Model/DetailCartModel.php';
+global $conn;
+$cartDetail = new DetailCartModel($conn);
+
+
+if (isset($_GET["product-id"]) && isset($_GET["cart-id"])) {
+    $product_id = $_GET["product-id"];
+    $cart_id = $_GET["cart-id"];
+    $cartDetail->RemoveCartDetail($cart_id, $product_id);
+}
+
+if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
+    $cartID = $_POST["id-cart"];
+    $productID = $_POST["product-id"];
+    $newQuantity = $_POST["new-quantity"];
+
+    $cartDetail->UpdateCartDetail($cartID, $productID, $newQuantity);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +42,7 @@
                 <th>Image</th>
                 <th>Name</th>
                 <th>Price</th>
+                <th>Quantity</th>
                 <th>Description</th>
                 <th>Action</th>
             </tr>
@@ -54,6 +78,7 @@
                         $row["id_cartDetail"],
                         $row["id_cart"],
                         $row["ProductID"],
+                        $row["quantity"],
                     );
                     $selectProduct = "SELECT * FROM products WHERE ProductID = '$product->ProductID'";
                     $resultProduct = $conn->query($selectProduct);
@@ -70,10 +95,6 @@
                         );
                     }
                     ?>
-
-
-
-
                     <tr class="row-product">
                         <td>
                             <?php echo $product->id_cart ?>
@@ -91,12 +112,28 @@
                             <?php echo $productDetail->Price ?>
                         </td>
                         <td>
+
+                            <form class="edit-quantity" action="viewCart.php" method="post">
+                                <input class="quantity" type="number" name="new-quantity" min="1"
+                                    value="<?php echo $product->Quantity ?>">
+                                <input type="hidden" name="id-cart" value="<?php echo $product->id_cart ?>">
+                                <input type="hidden" name="product-id" value="<?php echo $product->ProductID ?>">
+                                <input class="btn-update" type="submit" value="Update" name="update_quantity">
+                            </form>
+
+                        </td>
+                        <td>
                             <?php echo $productDetail->Description ?>
                         </td>
                         <td>
-                            <button class="btn edit-btn"><a
-                                    href="editCartModel.php?id_cart=<?php echo $product->id_cart ?>">Edit</a></button>
-                            <button class="btn delete-btn" onclick="deleteProduct()">Remove</button>
+                            <!-- <button class="btn edit-btn"><a
+                                    href="editCartModel.php?id_cart=<?php echo $product->id_cart ?>">Edit</a></button> -->
+                            <button class="btn delete-btn">
+                                <a
+                                    href="viewCart.php?product-id=<?php echo $product->ProductID ?>&cart-id=<?php echo $product->id_cart ?>">
+                                    Remove
+                                </a>
+                            </button>
                         </td>
                     </tr>
                     <?php
@@ -105,21 +142,6 @@
             ?>
         </table>
     </div>
-    <script>
-        function deleteProduct() {
-
-
-            console.log("hello!");
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.querySelector(".shopping-cart").innerHTML = this.responseText;
-                }
-            };
-            xhttp.open("GET", "viewCart.php", true);
-            xhttp.send();
-        }
-    </script>
 </body>
 
 </html>
