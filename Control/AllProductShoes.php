@@ -48,7 +48,6 @@ if (isset($_GET['category'])) {
             echo '<p class="card-text">' . $product->Description . '</p>';
             echo '</div>';
             echo '<a href="./product_detail.php?product_id=' . $product->ProductID . '" class="btn btn-primary">View Details</a>';
-          
             echo '</div>';
             echo '</div>';
         }

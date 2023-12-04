@@ -25,7 +25,6 @@
         <option value="desc">Price High to Low</option>
     </select>
     </div>
-
 <script>
     function sortProducts() {
         var sortValue = document.getElementById('sortPrice').value;

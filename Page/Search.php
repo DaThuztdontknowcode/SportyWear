@@ -1,4 +1,3 @@
-<!-- Trang all_products.php -->
 <!DOCTYPE html>
 
 <?php include 'navbar.php'; ?>
@@ -9,37 +8,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Products</title>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Your custom CSS file -->
     <link rel="stylesheet" href="../css/AllShoes.css">
 
     
 </head>
 
 <body>
-<div class="container mt-5 Section">
-    <div class="sort-container">
-    <select id="sortPrice" onchange="sortProducts()">
-        <option value="">Sort by</option>
-        <option value="asc">Price Low to High</option>
-        <option value="desc">Price High to Low</option>
-    </select>
-    </div>
+<?php include 'navbar.php'; ?>
 
-<script>
-    function sortProducts() {
-        var sortValue = document.getElementById('sortPrice').value;
-        var currentUrl = window.location.href;
-        var newUrl = new URL(currentUrl);
-        newUrl.searchParams.set('sort', sortValue);
-        window.location.href = newUrl.toString();
-    }
-</script>
+    <div class="container mt-5 Section">
+        <div class="sort-container">
+            <select id="sortPrice" onchange="sortProducts()">
+                <option value="">Sort by</option>
+                <option value="asc">Price Low to High</option>
+                <option value="desc">Price High to Low</option>
+            </select>
+        </div>
+        <div class="filter-container">
+            <form action="search.php" method="GET">
+            <input type="hidden" name="query" value="<?php echo isset($_GET['query']) ? $_GET['query'] : ''; ?>">
+                <label for="category">Category:</label>
+                <select name="category" id="category">
+                    <option value="">All Categories</option>
+                    <option value="1">Shoes</option>
+                    <option value="2">Shirts</option>
+                    <option value="3">Shorts</option>
+                    <option value="4">Socks</option>
+                </select>
+
+                <label for="min_price">Min Price:</label>
+                <input type="number" name="min_price" id="min_price" placeholder="Min Price">
+
+                <label for="max_price">Max Price:</label>
+                <input type="number" name="max_price" id="max_price" placeholder="Max Price">
+
+                <button type="submit">Filter</button>
+            </form>
+        </div>
+
+        <script>
+            function sortProducts() {
+                var sortValue = document.getElementById('sortPrice').value;
+                var currentUrl = window.location.href;
+                var newUrl = new URL(currentUrl);
+                newUrl.searchParams.set('sort', sortValue);
+                window.location.href = newUrl.toString();
+            }
+        </script>
     <div class="container mt-5 Section">
         <div class="Title_container">
         <?php
-        if (isset($_GET['query'])) {
+        if (isset($_GET['query']) || isset($_GET['category']) || isset($_GET['min_price']) || isset($_GET['max_price'])) {
             $SearchText = $_GET['query'];
 
                     echo '<h1 class="category-title">Result for: '.$SearchText.'</h1>';

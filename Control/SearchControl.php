@@ -2,21 +2,43 @@
 require_once '../config.php';
 require_once '../Model/Product.php';
 
-if (isset($_GET['query'])) {
+if (isset($_GET['query']) || isset($_GET['category']) || isset($_GET['min_price']) || isset($_GET['max_price'])) {
     $searchTerm = $_GET['query'];
 
-    // Truy vấn cơ sở dữ liệu để tìm kiếm sản phẩm
     $sort_order = isset($_GET['sort']) ? $_GET['sort'] : '';
-    $sql = "SELECT * FROM Products WHERE ProductName LIKE '%$searchTerm%' OR Description LIKE '%$searchTerm%'";
+
+    $sql = "SELECT * FROM Products WHERE (ProductName LIKE '%$searchTerm%' OR Description LIKE '%$searchTerm%')";
+
+if (isset($_GET['category']) && $_GET['category'] !== '') {
+    $category = $_GET['category'];
+    $sql .= " AND CategoryID = $category";
+} else {
+    $sql .= " AND CategoryID IS NOT NULL";
+}
+
+if (isset($_GET['min_price']) && $_GET['min_price'] !== '') {
+    $min_price = $_GET['min_price'];
+    $sql .= " AND (Price >= $min_price OR Price IS NULL)";
+}
+
+if (isset($_GET['max_price']) && $_GET['max_price'] !== '') {
+    $max_price = $_GET['max_price'];
+    $sql .= " AND (Price <= $max_price OR Price IS NULL)";
+}
+
     if ($sort_order == 'asc') {
         $sql .= " ORDER BY Price ASC";
     } elseif ($sort_order == 'desc') {
         $sql .= " ORDER BY Price DESC";
     }
+
     $result = $conn->query($sql);
-    // Kiểm tra và hiển thị kết quả
+
+    if (!$result) {
+        die("Query failed: " . $conn->error);
+    }
+
     if ($result->num_rows > 0) {
-        // Display search results
         while ($row = $result->fetch_assoc()) {
             $product = new Product(
                 $row["ProductID"],
@@ -41,7 +63,6 @@ if (isset($_GET['query'])) {
             echo '</div>';
         }
     } else {
-        // Display "No result" message with appropriate footer styling
         echo '<div class="col-md-12 NoResult">';
         echo '<h1>No result for your search</h1>';
         echo '</div>';
@@ -50,5 +71,5 @@ if (isset($_GET['query'])) {
     echo "<p>Please enter a search term.</p>";
 }
 
-// Đóng kết nối cơ sở dữ liệu
+$conn->close();
 ?>

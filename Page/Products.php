@@ -42,7 +42,6 @@ include '../Control/process_filter.php';
         <button type="submit">Filter</button>
     </form>
 </div>
-
 </div>
   
         <div class="Wrap_Products">

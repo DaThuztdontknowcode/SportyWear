@@ -11,7 +11,6 @@ if(isset($_POST['submit'])){
     $cpassword = $_POST['cpassword'];
     $user_type = $_POST['user_type'];
     $image = $_FILES['image']['name'];
-
     $error = $userController->registerUser($name, $email, $password, $user_type, $image);
 }
 

@@ -39,7 +39,6 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
             <div class="cart-container col-lg-8 pe-5">
                 <div class="cart-title">Your Cart</div>
                 <?php
-                // Mã PHP hiển thị toàn bộ sản phẩm
                 require_once '../config.php';
                 require_once '../Model/CartDetail.php';
                 require_once '../Model/Cart.php';
@@ -60,7 +59,7 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
 
                 $sql = "SELECT * FROM cartdetail WHERE id_cart = $cartID->id_cart";
                 $result = $conn->query($sql);
-
+                $total = 0;
                 if ($result->num_rows > 0) {
                     $i = 0;
                     while ($row = $result->fetch_assoc()) {
@@ -84,10 +83,10 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
                                 $row["image_url"],
                                 $row["BrandID"],
                             );
+                            $total = $total + ($product->Quantity * $productDetail->Price);
                         }
                         ?>
                 <div class="cart-view">
-
                     <div class="cart-item">
                         <img src='<?php echo $productDetail->img ?>' width="200px" heighth="200px"
                             class="cart-item-img">
@@ -142,7 +141,7 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
                     <div class="cart-total-subtotal">
                         <div>Subtotal</div>
                         <div class="cart-total-price">
-                            <?php echo $productDetail->Price ?>
+                            <?php echo $total ?>
                         </div>
                     </div>
                     <div class="cart-total-subtotal">
@@ -153,7 +152,7 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
                 <div class="cart-total-sum">
                     <div>Total</div>
                     <div class="cart-total-price">
-                        <?php echo $productDetail->Price ?>
+                        <?php echo $total ?>
                     </div>
                 </div>
                 <div class=" d-flex justify-content-center w-100 mt-4">
