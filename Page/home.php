@@ -65,7 +65,6 @@
             <div class="text-center">
             <button class="btn btn-custom" onclick="redirectToPage1()">Get your shoes</button>
             </div>
-
         </div>
             </div>
         </div>
@@ -112,8 +111,6 @@
         </div>
     </div>
 </section>
-
-
 <!-- <section id="section-2" class="section-2 container-fluid p-0">
     <div class="cover">
         <div class="content text-center">
@@ -149,26 +146,30 @@
         <h2>Lebron Collection</h2>
     </div>
     <div class="image-row">
-        <div class="image-column">
-            <img src="https://i.pinimg.com/564x/ec/2e/34/ec2e34586df8da3b918f9ef882e890ff.jpg" alt="Image 1">
-            <button class="explore-btn">Explore Now</button>
-            <img id="follow-img" src="https://images.footballfanatics.com/nike-white-nba-headband_pi2694000_ff_2694897_full.jpg?_hv=2" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
-        </div>
         
-        <div class="image-column">
-            <img src="https://i.pinimg.com/564x/b1/c9/b1/b1c9b11586ded034794cf2a7f6e86f0f.jpg" alt="Image 2">
-            <button class="explore-btn" onclick="redirectToProduct44()">Explore Now</button>
-            <img id="follow-img2" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/539492/01/mod01/fnd/PNA/fmt/png/PUMA-x-TMC-Everyday-Hussle-Men's-Sweatshorts" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
-        </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 image-column">
+                <img class="img-fluid" src="https://i.pinimg.com/564x/ec/2e/34/ec2e34586df8da3b918f9ef882e890ff.jpg" alt="Image 1">
+                <button class="explore-btn">Explore Now</button>
+                <img id="follow-img" src="https://images.footballfanatics.com/nike-white-nba-headband_pi2694000_ff_2694897_full.jpg?_hv=2" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
+            </div>
+         
+        
+        
+            <div class="col-lg-3 col-md-4 col-sm-6 image-column">
+                <img class="img-fluid" src="https://i.pinimg.com/564x/b1/c9/b1/b1c9b11586ded034794cf2a7f6e86f0f.jpg" alt="Image 2">
+                <button class="explore-btn" onclick="redirectToProduct44()">Explore Now</button>
+                <img id="follow-img2" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/539492/01/mod01/fnd/PNA/fmt/png/PUMA-x-TMC-Everyday-Hussle-Men's-Sweatshorts" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
+            </div>
+        
 
-        <div class="image-column">
-            <img src="https://i.pinimg.com/564x/93/c7/bd/93c7bd60a0941c5a68591b6d74788cc7.jpg" alt="Image 3">
+        <div class="col-lg-3 col-md-4 col-sm-6 image-column">
+            <img class="img-fluid" src="https://i.pinimg.com/564x/93/c7/bd/93c7bd60a0941c5a68591b6d74788cc7.jpg" alt="Image 3">
             <button class="explore-btn">Explore Now</button>
             <img id="follow-img3" src="https://images.footballfanatics.com/nike-white-nba-headband_pi2694000_ff_2694897_full.jpg?_hv=2" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
         </div>
 
-        <div class="image-column">
-            <img src="https://i.pinimg.com/564x/c0/b2/02/c0b202cd2463bff530fdb3d091c5e4e1.jpg" alt="Image 4">
+        <div class="col-lg-3 col-md-4 col-sm-6 image-column">
+            <img class="img-fluid" src="https://i.pinimg.com/564x/c0/b2/02/c0b202cd2463bff530fdb3d091c5e4e1.jpg" alt="Image 4">
             <button class="explore-btn">Explore Now</button>
             <img id="follow-img4" src="https://images.footballfanatics.com/nike-white-nba-headband_pi2694000_ff_2694897_full.jpg?_hv=2" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
         </div>

@@ -18,12 +18,30 @@
 </head>
 
 <body>
+<div class="container mt-5 Section">
+    <div class="sort-container">
+    <select id="sortPrice" onchange="sortProducts()">
+        <option value="">Sort by</option>
+        <option value="asc">Price Low to High</option>
+        <option value="desc">Price High to Low</option>
+    </select>
+    </div>
+
+<script>
+    function sortProducts() {
+        var sortValue = document.getElementById('sortPrice').value;
+        var currentUrl = window.location.href;
+        var newUrl = new URL(currentUrl);
+        newUrl.searchParams.set('sort', sortValue);
+        window.location.href = newUrl.toString();
+    }
+</script>
     <div class="container mt-5 Section">
         <div class="Title_container">
         <?php
         if (isset($_GET['query'])) {
             $SearchText = $_GET['query'];
-        
+
                     echo '<h1 class="category-title">Result for: '.$SearchText.'</h1>';
         }
         ?>

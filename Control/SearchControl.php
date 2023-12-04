@@ -6,9 +6,14 @@ if (isset($_GET['query'])) {
     $searchTerm = $_GET['query'];
 
     // Truy vấn cơ sở dữ liệu để tìm kiếm sản phẩm
+    $sort_order = isset($_GET['sort']) ? $_GET['sort'] : '';
     $sql = "SELECT * FROM Products WHERE ProductName LIKE '%$searchTerm%' OR Description LIKE '%$searchTerm%'";
+    if ($sort_order == 'asc') {
+        $sql .= " ORDER BY Price ASC";
+    } elseif ($sort_order == 'desc') {
+        $sql .= " ORDER BY Price DESC";
+    }
     $result = $conn->query($sql);
-
     // Kiểm tra và hiển thị kết quả
     if ($result->num_rows > 0) {
         // Display search results
@@ -29,6 +34,7 @@ if (isset($_GET['query'])) {
             echo '<div class="card-body">';
             echo '<h5 class="card-title">' . $product->ProductName . '</h5>';
             echo '<p class="card-text">' . $product->Description . '</p>';
+            echo "<p>Price: $" . $row["Price"] . "</p>";
             echo '</div>';
             echo '<a href="./product_detail.php?product_id=' . $product->ProductID . '" class="btn btn-primary">View Details</a>';
             echo '</div>';
