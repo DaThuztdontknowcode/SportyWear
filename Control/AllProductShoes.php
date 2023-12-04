@@ -25,7 +25,6 @@ require_once '../Model/Product.php';
 if (isset($_GET['category'])) {
     $selectedCategory = $_GET['category'];
 
-    // Truy vấn dữ liệu từ cơ sở dữ liệu với category được chọn
     $sql = "SELECT * FROM Products WHERE CategoryID = '$selectedCategory'";
     $result = $conn->query($sql);
 
@@ -41,7 +40,6 @@ if (isset($_GET['category'])) {
                 $row["image_url"],
                 $row["BrandID"]
             );
-
             echo '<div class="col-md-4 mb-4">';
             echo '<div class="card">';
             echo '<img src="' . $product->img . '" class="card-img-top" alt="' . $product->ProductName . '">';

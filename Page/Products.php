@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Slider</title>
-    <!-- Thêm các tệp CSS và JS của Slick Carousel -->
    <link rel="stylesheet" href="../css/ProductsCss.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -15,9 +14,36 @@
 </head>
 
 <body>
-<?php include './NavBar.php';?>
+<?php include 'navbar.php';?>
+<?php
+include '../Model/load_categories.php';
+include '../Control/process_filter.php';
+?>
+
 <div class="Shirt Section">
-    
+<div class="filter-container">
+<div class="filter-container">
+<form action="all_products copy.php" method="GET">
+        <label for="category">Category:</label>
+        <select name="category" id="category">
+            <option value="">All Categories</option>
+            <option value="1">Shoes</option>
+            <option value="2">Shirts</option>
+            <option value="3">Shorts</option>
+            <option value="4">Stocks</option>
+        </select>
+
+        <label for="min_price">Min Price:</label>
+        <input type="number" name="min_price" id="min_price" placeholder="Min Price">
+
+        <label for="max_price">Max Price:</label>
+        <input type="number" name="max_price" id="max_price" placeholder="Max Price">
+
+        <button type="submit">Filter</button>
+    </form>
+</div>
+
+</div>
   
         <div class="Wrap_Products">
         <div class="Title-Container">

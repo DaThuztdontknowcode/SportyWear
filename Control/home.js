@@ -1,26 +1,11 @@
 // // script.js
 
-// function scrollToSection1() {
-//     // Get the position of the section-1 element
-//     var section1Position = document.getElementById('section-1').offsetTop;
-
-//     // Scroll to the section-1 element with a smooth animation
-//     window.scrollTo({
-//         top: section1Position,
-//         behavior: 'smooth'
-//     });
-// }
-
-// function scrollToSection2() {
-//     // Get the position of the section-2 element
-//     var section2Position = document.getElementById('section-2').offsetTop;
-
-//     // Scroll to the section-2 element with a smooth animation
-//     window.scrollTo({
-//         top: section2Position,
-//         behavior: 'smooth'
-//     });
-// }
+function scrollToSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
 
 document.getElementById('scrollToTopBtn').addEventListener('click', function() {
     scrollToTop();
@@ -82,8 +67,64 @@ document.querySelector('.zoom-image').addEventListener('mouseleave', function() 
     this.style.zIndex = '1';
 });
 function redirectToPage1() {
+    window.location.href = "all_products.php?category=1";
+}
+function redirectToPage2() {
+    window.location.href = "all_products.php?category=2";
+}
+function redirectToPage5() {
+    window.location.href = "all_products.php?category=5";
+}
+function redirectToPage14() {
     window.location.href = "all_products.php?category=14";
 }
+// document.addEventListener('DOMContentLoaded', function () {
+//     const btn = document.querySelector('.explore-btn');
+//     const img = document.getElementById('follow-img');
+    
+//     btn.addEventListener('mouseenter', function () {
+//         img.style.display = 'block';
+//     });
+
+//     btn.addEventListener('mousemove', function (e) {
+//         const offsetX = 40; // Khoảng cách ngang từ con trỏ chuột đến hình ảnh
+//         const offsetY = -150; // Khoảng cách dọc từ con trỏ chuột lên phía trên hình ảnh
+//         img.style.left = (e.pageX + offsetX) + 'px';
+//         img.style.top = (e.pageY + offsetY) + 'px';
+//     });
+
+//     btn.addEventListener('mouseleave', function () {
+//         img.style.display = 'none';
+//     });
+// });
+document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.explore-btn');
+    const images = document.querySelectorAll('.image-column img[id^="follow-img"]');
+
+    buttons.forEach(function (btn, index) {
+        const img = images[index];
+
+        btn.addEventListener('mouseenter', function () {
+            img.style.display = 'block';
+        });
+
+        btn.addEventListener('mousemove', function (e) {
+            const offsetX = 40; 
+            const offsetY = -150; 
+            img.style.left = (e.pageX + offsetX) + 'px';
+            img.style.top = (e.pageY + offsetY) + 'px';
+        });
+
+        btn.addEventListener('mouseleave', function () {
+            img.style.display = 'none';
+        });
+    });
+});
+function redirectToProduct44() {
+    window.location.href = 'http://localhost/clone/Sportywear/Page/product_detail.php?product_id=44';
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
     // Lấy danh sách các hình ảnh trong section-3
     var images = document.querySelectorAll("#section-3 .image-column img");

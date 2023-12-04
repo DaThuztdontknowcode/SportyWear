@@ -20,23 +20,31 @@
 <?php include 'navbar.php'; ?>   
 <body>
 <header>
-        <div class="container-fluid p-0">
+    <div class="container-fluid p-0">
+        <!-- Background image or slideshow here -->
+        <div class="header-background" style="background-image: url('https://i.pinimg.com/564x/58/49/4a/58494a343cc16e8e73ff94bc812a97cc.jpg');">
+            <!-- Overlay with Opacity to darken the image for text visibility -->
+            <div class="header-overlay" style="background: rgba(0, 0, 0, 0.5);">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-md-7 col-sm-12 text-white">
+                            <h6>YOUR SPORTING ADVENTURE BEGINS HERE</h6>
+                            <h1>Welcome to SportyWear</h1>
+                            <p>Discover the latest sports gear and apparel to elevate your performance.</p>
+                            <div class="view">
+                                <button class="btn btn-light primary-btn px-5 py-2" onclick="scrollToSection('section-1')">Impressive Figures</button>
+                                <button class="btn btn-light primary-btn px-5 py-2" onclick="scrollToSection('section-3')">Another Section</button>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-sm-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-md-7 col-sm-12 text-white">
-              <h6>YOUR SPORTING ADVENTURE BEGINS HERE</h6>
-              <h1>Welcome to SportyWear</h1>
-              <p>Discover the latest sports gear and apparel to elevate your performance.</p>
-            <div class="view">
-            <button class="btn btn-light primary-btn px-5 py-2" onclick="scrollToSection1()">Impressive figures</button>
-            </div>  
-        </div>
-          <div class="col-md-5 col-sm-12">
-          </div>
-        </div>
-        </div>
-    </header>
+    </div>
+</header>
+
     <main>
     <section id="section-1" class="section-1">
     <div class="container text-center">
@@ -55,7 +63,7 @@
             <p class="pt-4">Discover top picks for athletic footwear. Elevate your performance and style with our premium collection designed for comfort and durability.</p>
             <p>Feel the difference with SportyWear's quality and fashion-forward designs!</p>
             <div class="text-center">
-            <button class="btn btn-custom" onclick="redirectToPage1()">Explore More</button>
+            <button class="btn btn-custom" onclick="redirectToPage1()">Get your shoes</button>
             </div>
 
         </div>
@@ -65,8 +73,8 @@
         <div class="row">
             <div class="col-md-6 col-12">
                 <div>
-                    <div>
-                        <img src="https://i.pinimg.com/564x/09/a4/b4/09a4b46aa5970c736adcf5eeff5948b9.jpg" width="100%" alt="Sporty Footwear">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/564x/09/a4/b4/09a4b46aa5970c736adcf5eeff5948b9.jpg" width="100%" alt="Sporty Footwear" class="zoom-image">
                     </div>
                 </div>
             </div>
@@ -75,6 +83,10 @@
                         <h2>Step Into Style with Our Sporty Apparel Collection</h2>
                 <p class="pt-4">We recommend our latest apparel collection. From performance-enhancing activewear to casual sporty outfits, discover the perfect fit for your active lifestyle.</p>
                 <p>Experience the fusion of comfort and fashion!</p>
+                <div class="text-center">
+            <button class="btn btn-custom" onclick="redirectToPage2()">Get your shirt</button>
+            <button class="btn btn-custom" onclick="redirectToPage5()">Get your tight</button>
+            </div>
                 </div>
             </div>
         </div>
@@ -82,8 +94,8 @@
         <div class="row">
             <div class="col-md-6 col-12">
                 <div>
-                    <div>
-                        <img src="https://i.pinimg.com/564x/51/f8/41/51f84171881159c0ba4fb23dcb9d5f32.jpg" width="100%" alt="Sport Accessories">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/564x/51/f8/41/51f84171881159c0ba4fb23dcb9d5f32.jpg" width="100%" alt="Sport Accessories" class="zoom-image">
                     </div>
                 </div>
             </div>
@@ -92,6 +104,9 @@
                 <h2>Elevate Your Game with Sport Accessories</h2>
         <p class="pt-4">Complete your sports gear collection with accessories recommended by SportyWear. From high-performance gloves and stylish headbands to sleek water bottles and more, we've got you covered.</p>
         <p>Enhance your performance with the right accessories!</p>
+        <div class="text-center">
+            <button class="btn btn-custom" onclick="redirectToPage14()">Don't fogive your Accessories</button>
+            </div>
                 </div>
             </div>
         </div>
@@ -130,21 +145,36 @@
 </section> -->
 <!-- Thêm sau section-2 -->
 <section id="section-3" class="section-3 container-fluid p-0">
+    <div class="section-title">
+        <h2>Lebron Collection</h2>
+    </div>
     <div class="image-row">
         <div class="image-column">
-            <img src="https://i.pinimg.com/564x/d0/cd/d6/d0cdd6cd1b9d7d78b38e81c66094578a.jpg" alt="Image 1">
+            <img src="https://i.pinimg.com/564x/ec/2e/34/ec2e34586df8da3b918f9ef882e890ff.jpg" alt="Image 1">
+            <button class="explore-btn">Explore Now</button>
+            <img id="follow-img" src="https://images.footballfanatics.com/nike-white-nba-headband_pi2694000_ff_2694897_full.jpg?_hv=2" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
         </div>
+        
         <div class="image-column">
             <img src="https://i.pinimg.com/564x/b1/c9/b1/b1c9b11586ded034794cf2a7f6e86f0f.jpg" alt="Image 2">
+            <button class="explore-btn" onclick="redirectToProduct44()">Explore Now</button>
+            <img id="follow-img2" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/539492/01/mod01/fnd/PNA/fmt/png/PUMA-x-TMC-Everyday-Hussle-Men's-Sweatshorts" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
         </div>
+
         <div class="image-column">
             <img src="https://i.pinimg.com/564x/93/c7/bd/93c7bd60a0941c5a68591b6d74788cc7.jpg" alt="Image 3">
+            <button class="explore-btn">Explore Now</button>
+            <img id="follow-img3" src="https://images.footballfanatics.com/nike-white-nba-headband_pi2694000_ff_2694897_full.jpg?_hv=2" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
         </div>
+
         <div class="image-column">
             <img src="https://i.pinimg.com/564x/c0/b2/02/c0b202cd2463bff530fdb3d091c5e4e1.jpg" alt="Image 4">
+            <button class="explore-btn">Explore Now</button>
+            <img id="follow-img4" src="https://images.footballfanatics.com/nike-white-nba-headband_pi2694000_ff_2694897_full.jpg?_hv=2" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
         </div>
     </div>
 </section>
+
 
 
     

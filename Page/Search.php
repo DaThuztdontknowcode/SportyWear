@@ -26,11 +26,6 @@
         
                     echo '<h1 class="category-title">Result for: '.$SearchText.'</h1>';
         }
-            
-        
-        
-        
-        
         ?>
         </div>
         
