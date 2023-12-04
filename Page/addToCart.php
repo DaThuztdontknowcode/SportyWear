@@ -18,7 +18,7 @@ if (isset($_POST['dathang']) && ($_POST['dathang'])) {
     $id_ProductID = $row_CartDetail["ProductID"];
 
 
-    if (empty($id_ProductID)) {
+    if ($id_ProductID == null) {
 
         // Lấy id_cart thông qua id_user
         $select_idCart = "SELECT id_cart FROM cart WHERE id_user = $user_id";

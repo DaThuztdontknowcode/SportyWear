@@ -78,7 +78,7 @@ $user_id = $_SESSION['user_id'];
                     <a href="../Page/all_products.php?category=14">Accessories</a>
                 </div>
             </li>
-            <li style="float: right;"><a href="#"><i class="fa-solid fa-shopping-cart"></i></a></li>
+            <li style="float: right;"><a href="./viewCart.php"><i class="fa-solid fa-shopping-cart"></i></a></li>
             <li style="float: right;"><a href="../Page/user_page.php"><i class="fa-solid fa-user"></i></a></li>
             <ul>
                 <li class="search-bar">

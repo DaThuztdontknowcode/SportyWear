@@ -60,7 +60,7 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
 
                 $sql = "SELECT * FROM cartdetail WHERE id_cart = $cartID->id_cart";
                 $result = $conn->query($sql);
-
+                $total = 0;
                 if ($result->num_rows > 0) {
                     $i = 0;
                     while ($row = $result->fetch_assoc()) {
@@ -84,6 +84,7 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
                                 $row["image_url"],
                                 $row["BrandID"],
                             );
+                            $total = $total + ($product->Quantity * $productDetail->Price);
                         }
                         ?>
                 <div class="cart-view">
@@ -142,7 +143,7 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
                     <div class="cart-total-subtotal">
                         <div>Subtotal</div>
                         <div class="cart-total-price">
-                            <?php echo $productDetail->Price ?>
+                            <?php echo $total ?>
                         </div>
                     </div>
                     <div class="cart-total-subtotal">
@@ -153,17 +154,47 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
                 <div class="cart-total-sum">
                     <div>Total</div>
                     <div class="cart-total-price">
-                        <?php echo $productDetail->Price ?>
+                        <?php echo $total ?>
                     </div>
                 </div>
                 <div class=" d-flex justify-content-center w-100 mt-4">
                     <button class="btn-backToShop"><a href="./Products.php">Back To Shop</a></button>
+                </div>
+
+                <div class=" d-flex justify-content-center w-100 mt-4">
+                    <button class="btn-checkout"><a class="checkout" href="#">Check Out</a></button>
                 </div>
             </div>
 
         </div>
 
     </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const checkout = document.querySelector(".btn-checkout a");
+        if (checkout) {
+            checkout.addEventListener("click", function(event) {
+                event.preventDefault();
+                <?php
+
+                    require_once '../config.php';
+                    require_once '../Model/HoaDonModel.php';
+
+                    global $conn;
+                    $hoadon = new HoaDonModel($conn);
+                    $user_id = $_SESSION['user_id'];
+                    $hoadon->AddToHoaDon($product->id_cart);
+
+
+
+                    ?>
+            });
+        }
+    });
+    </script>
+
+
+    </script>
 </body>
 
 </html>
