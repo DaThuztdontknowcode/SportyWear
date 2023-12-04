@@ -145,20 +145,25 @@ table {
 
 
 
-.btn-backToShop {
+.btn-backToShop,
+.btn-checkout {
    background-color: #000;
    display: inline-block;
    width:80%;
+   padding: 18px 20px;
    justify-content: center;
    align-items: center;
-   padding: 18px 0;
    border-radius: 45px;
    cursor: pointer;
 }
 
-.btn-backToShop a {
+.btn-backToShop a,
+.btn-checkout a {
+   font-size: 20px;
+   font-weight: 300;
    text-decoration: none;
    color: #fff;
+   padding: 18px 20px !important;
 }
 
 .quantity {
