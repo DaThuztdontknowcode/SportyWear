@@ -45,28 +45,137 @@ table {
 
 /* edit-quantity */
 
-.edit-quantity {
+/* .edit-quantity {
    display: flex;
    flex-direction: row; 
    justify-content: center;
    align-items: center;
    padding: 0 20px;
-}
+} */
 
 .quantity {
-   width: 35px;
+   width: 50px;
    margin-right: 10px;
-   border: 2px solid coral;
+   border: none;
    border-radius: 5px;
+   color: gray;
 }
 
 .btn-update {
    padding: 5px 10px;
    border-radius: 5px;
    margin: 5px;
-   width: 80px;
-   font-style: bold;
+   width:fit-content;
+   font-weight: 500;
+   font-size: 16px;
    background-color: lightgreen;
+   color: gray;
+}
+
+
+/* NEW */
+.cart {
+   
+   padding: 0 30px;
+}
+
+.cart-item {
+   display: flex;
+}
+
+.cart-item {
+   padding: 24px 0;
+   border-bottom: 2px solid lightgrey;
+}
+
+.cart-title, 
+.cart-total-title {
+   font-size: 2.5rem;
+   font-weight: 700;
+}
+
+.cart-item-img {
+   padding-right: 20px;
+}
+
+.cart-item-detail {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   font-size: 2rem;
+}
+
+.cart-item-name {
+   font-weight: 500;
+}
+
+.cart-quantity {
+   display: flex;
+   align-items: center;
+   color: gray;
+}
+
+.edit-quantity {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-left: 20px;
+}
+
+.cart-item-price {
+   font-weight: 500;
+}
+
+.cart-total-detail {
+   padding-top: 24px;
+}
+
+.cart-total-detail, 
+.cart-total-sum {
+   border-bottom: 1px solid lightgray;
+}
+
+.cart-total-subtotal,
+.cart-total-sum {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-bottom: 20px;
+   font-size: 30px;
+   font-weight: 300;
+}
+
+.cart-total-sum {
+   padding-top: 20px;
+}
+
+.cart-item-info {
+   position: relative;
+}
+
+.remove {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   color: grey;
+}
+
+
+
+.btn-backToShop {
+   background-color: #000;
+   display: inline-block;
+   width:80%;
+   justify-content: center;
+   align-items: center;
+   padding: 18px 0;
+   border-radius: 45px;
+   cursor: pointer;
+}
+
+.btn-backToShop a {
+   text-decoration: none;
+   color: #fff;
 }
 
 /* .edit-quantity input[type="submit"] {
