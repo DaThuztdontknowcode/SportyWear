@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Start of Async Drift Code -->
     <script>
 "use strict";
@@ -37,6 +38,7 @@ drift.load('utsez2c7b623');
  
 </head>
 <body>
+<?php include '../Control/CheckUserType.php'; ?>   
 
 <nav class="navbarr">
     <ul>
@@ -61,9 +63,36 @@ drift.load('utsez2c7b623');
                 <a href="../Page/all_products.php?category=13">Sweatshirt</a>
                 <a href="../Page/all_products.php?category=14">Accessories</a>
             </div>
+         
         </li>
         <li><a href="#">Cart</a></li>
-    
+        <?php
+        // Display the "Admin" button conditionally
+        if (isset($_SESSION['user_id'])) {
+            $userId = $_SESSION['user_id'];
+            $userType = getUserType($userId, $conn);
+
+            // Output result to the console
+            echo '<script>';
+            echo 'console.log("User Type:", ' . json_encode($userType) . ');';
+            echo '</script>';
+
+            if ($userType === 'Admin') {
+                echo '<li  class="dropdownn"><a href="../Page/Admin.php" class="dropbtnn">Admin</a>';
+                echo '<div class="dropdownn-content1">';
+                echo '<a href="../Page/Admin.php">Edit</a>';
+                echo' <a href="../Page/AddProduct.php">Add</a>';
+                echo'   </div>';
+                echo'</li>';
+
+            }
+        }else{
+       
+          echo '</script>';
+
+        
+        }
+        ?>
         <li class="dropdownn" style="float: right;"> 
             <a href="#" class="dropbtnn" id="profile">View Profile</a>
             <div class="dropdownn-content">

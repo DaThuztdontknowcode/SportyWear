@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<?php include 'navbar.php';?>
+<?php include './NavBar.php';?>
 <div class="Shirt Section">
     
   
