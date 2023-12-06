@@ -31,6 +31,7 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/9406821d13.js" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
@@ -173,19 +174,19 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
         if (checkout) {
             checkout.addEventListener("click", function(event) {
                 event.preventDefault();
-                <?php
+                // <?php
 
-                    require_once '../config.php';
-                    require_once '../Model/HoaDonModel.php';
+                //     require_once '../config.php';
+                //     require_once '../Model/HoaDonModel.php';
 
-                    global $conn;
-                    $hoadon = new HoaDonModel($conn);
-                    $user_id = $_SESSION['user_id'];
-                    $hoadon->AddToHoaDon($product->id_cart);
+                //     global $conn;
+                //     $hoadon = new HoaDonModel($conn);
+                //     $user_id = $_SESSION['user_id'];
+                //     $hoadon->AddToHoaDon($product->id_cart);
 
 
 
-                    ?>
+                //     ?>
             });
         }
     });

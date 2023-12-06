@@ -10,11 +10,37 @@
     <title>All Products</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/AllShoes.css">
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     
 </head>
 
 <body>
+<script>
+$(document).ready(function () {
+    // Gắn sự kiện "change" cho các trường lọc
+    $('#category, #min_price, #max_price').change(function () {
+        // Lấy giá trị các trường lọc
+        var category = $('#category').val();
+        var minPrice = $('#min_price').val();
+        var maxPrice = $('#max_price').val();
+
+        // Gửi yêu cầu Ajax đến trang search.php với các tham số lọc
+        $.ajax({
+            type: 'GET',
+            url: 'search.php',
+            data: {
+                category: category,
+                min_price: minPrice,
+                max_price: maxPrice
+            },
+            success: function (response) {
+                // Cập nhật nội dung kết quả tìm kiếm trên trang
+                $('.row').html(response);
+            }
+        });
+    });
+});
+</script>
 <?php include 'navbar.php'; ?>
 
     <div class="container mt-5 Section">

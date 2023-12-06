@@ -2,7 +2,9 @@
 @include '../config.php';
 include '../Control/LoginController.php';
 
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 $userController = new UserController($conn);
 
@@ -34,9 +36,26 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #007bff; 
+            color: #fff; 
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div class="form-container">
+        <a href="home.php" class="home-button">Visit Store as Guess</a>
         <form action="" method="post">
             <h3>Login Now</h3>
             <?php

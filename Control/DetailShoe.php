@@ -45,8 +45,8 @@ if (isset($_GET['product_id'])) {
 
                 <!-- Thêm button "Add to Cart" -->
                 <form action="addToCart.php" method="post">
-                    <input type="text" name="product_id" value="<?= $product->ProductID ?>">
-                    <input type="text" name="user_id" value="<?= $user_id ?>">
+                    <input  type="hidden" name="product_id" value="<?= $product->ProductID ?>">
+                    <input type="hidden" name="user_id" value="<?= $user_id ?>">
                     <input type="number" name="quantity" min="1" value="1">
                     <label for="size">Size:</label>
                         <select name="size" id="size">

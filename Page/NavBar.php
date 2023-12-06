@@ -1,7 +1,7 @@
 <?php
-session_start();
-$name = $_SESSION['user_name'];
-$user_id = $_SESSION['user_id'];
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 
 <!DOCTYPE html>
@@ -78,8 +78,17 @@ $user_id = $_SESSION['user_id'];
                     <a href="../Page/all_products.php?category=14">Accessories</a>
                 </div>
             </li>
-            <li style="float: right;"><a href="./viewCart.php"><i class="fa-solid fa-shopping-cart"></i></a></li>
-            <li style="float: right;"><a href="../Page/user_page.php"><i class="fa-solid fa-user"></i></a></li>
+            <?php
+        if (isset($_SESSION['user_id'])) {
+            // User is logged in, display cart and user profile links
+            echo '<li style="float: right;"><a href="./viewCart.php"><i class="fa-solid fa-shopping-cart"></i></a></li>';
+            echo '<li style="float: right;"><a href="../Page/user_page.php"><i class="fa-solid fa-user"></i></a></li>';
+        } else {
+            // User is not logged in, display sign in and sign up links
+            echo '<li style="float: right;"><a href="login_form.php">Sign In</a></li>';
+            echo '<li style="float: right;"><a href="register_form.php">Sign Up</a></li>';
+        }
+        ?>
             <ul>
                 <li class="search-bar">
                     <form action="../Page/search.php" method="GET" id="search-bar">

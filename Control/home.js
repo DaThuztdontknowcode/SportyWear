@@ -69,6 +69,7 @@ document.querySelector('.zoom-image').addEventListener('mouseleave', function() 
 function redirectToPage1() {
     window.location.href = "all_products.php?category=1";
 }
+
 function redirectToPage2() {
     window.location.href = "all_products.php?category=2";
 }
@@ -121,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 function redirectToProduct44() {
-    window.location.href = 'http://localhost/clone/Sportywear/Page/product_detail.php?product_id=44';
+    window.location.href = '../Page/product_detail.php?product_id=44';
 }
 
 

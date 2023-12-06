@@ -18,7 +18,5 @@ class HoaDonModel
         return $result;
 
     }
-
-
 }
 ?>
