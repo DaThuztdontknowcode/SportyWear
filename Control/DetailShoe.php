@@ -26,7 +26,7 @@
                 $row["BrandID"]
             );
             ?>
-            <div class="row">
+            <div class="row product-details">
                 <div class="col-md-6">
                     <img src="<?= $product->img ?>" alt="<?= $product->ProductName ?>" class="img-fluid">
                 </div>

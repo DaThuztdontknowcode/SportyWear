@@ -21,7 +21,7 @@ if (isset($_GET['product_id'])) {
 
         if ($result->num_rows > 0) {
             echo"<div class='Related_Wrap' >";
-            echo "<h2>Related Products</h2>";
+            echo "<h2 class='Title'>Related Products</h2>";
             echo "<div class='related-products-grid'>";
             echo "<div class='grid-container'>";
             
@@ -37,7 +37,7 @@ if (isset($_GET['product_id'])) {
                     $row["BrandID"]
                 );
 
-                echo "<div class='grid-item'>";
+                echo "<div class='grid-item product-details'>";
                 echo "<a href='./product_detail.php?product_id=" . $relatedProduct->ProductID . "' class='product-item'>";
                 echo "<img src='" . $relatedProduct->img . "' alt='" . $relatedProduct->ProductName . "'>";
                 echo "<div class='grid-content'>";

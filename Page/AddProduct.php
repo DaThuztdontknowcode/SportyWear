@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
+     <!-- ... Các thẻ khác ... -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/EditProduct.css">
 </head>
@@ -15,7 +16,7 @@
 <body>
 
 
-    <div class="container mt-5">
+    <div class="container mt-5  Container-animate Section">
     <h2 class="mb-4"><p>Add product</p></h2>
         <form action="../Control/Add.php" method="post" enctype="multipart/form-data">
             <div class="form-group">

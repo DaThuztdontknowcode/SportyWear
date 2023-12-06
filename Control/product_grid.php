@@ -18,7 +18,7 @@
                         $row["BrandID"]
                     );
 
-                    echo "<div class='product-item'>";
+                    echo "<div class='product-item product-item-animate'>";
                     echo "<div class='product-card'>";
                     echo "<a href='./product_detail.php?product_id=" . $product->ProductID . "' class='product-link'>";
                     echo "<img src='" . $product->img . "' alt='" . $product->ProductName . "' class='product-image'>";

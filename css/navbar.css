@@ -1,139 +1,159 @@
-/* navbar.css */
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+/* Reset some default styles */
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
 }
 
+/* Basic styling for the navigation bar */
 .navbarr {
-    top: 0;
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-    background-color: #000;
+  background-color: #333;
+  /* Change to your preferred background color */
+  overflow: hidden;
 }
 
-.navbarr ul li a {
-    text-decoration: none;
+/* Style for navigation bar links */
+.navbarr a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-.navbarr ul li a .dropdownn-content a {
-    text-decoration: none;
+/* ... (previous styles) */
+
+/* Style for the "Cart" and "User" icons */
+.icon {
+
+  float: right;
+}
+.icon a {
+  padding: 8px 16px;
 }
 
-.navbarr ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+/* ... (remaining styles) */
+
+
+/* Change color on hover */
+.navbarr a:hover {
+  background-color: #555;
 }
 
-.navbarr li {
-    float: left;
-}
-
-.navbarr a,
-.dropbtnn {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.navbarr a:hover,
-.dropdownn:hover .dropbtnn {
-    background-color: #ddd;
-    color: black;
-}
-
+/* Style for the dropdown container */
 .dropdownn {
-    display: inline-block;
+  display: inline-block;
 }
 
-/* Updated styles for dropdown content */
+/* Style for the dropdown links */
 .dropdownn-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 480px; /* Adjust based on your design */
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-.dropdownn-content1 {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 100px; /* Adjust based on your design */
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  /* Change to your preferred background color */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
-.dropdownn-content1 a {
-    color: black;
-    padding: 12px 16px;
-    display: block;
-    text-align: left;
-    
-    width: 100%; /* Each column takes one-third of the width */
-    box-sizing: border-box;
-}
-
-
-/* Divide into three columns */
-.dropdownn-content a {
-    color: black;
-    padding: 12px 16px;
-    display: block;
-    text-align: left;
-    float: left;
-    width: 33.33%; /* Each column takes one-third of the width */
-    box-sizing: border-box;
-}
-
-.dropdownn-content a:hover {
-    background-color: #ddd;
-}
-
+/* Show the dropdown content on hover */
 .dropdownn:hover .dropdownn-content {
-    display: block;
+  display: block;
 }
-.dropdownn:hover .dropdownn-content1 {
-    display: block;
+
+/* Style for submenus under Product and Admin */
+.dropdownn-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
-/* Adjustments for search-bar and submit button */
+
+/* Change color on hover for submenus */
+.dropdownn-content a:hover {
+  background-color: #ddd;
+  /* Change to your preferred background color */
+}
+
+/* Style for the "Cart" and "User" icons */
+.navbarr li i {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
 .search-bar {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    border-radius: 20px; /* Adjust the border-radius as needed */
-    overflow: hidden; /* Ensure rounded corners are applied */
-    padding: 5px 0 20px 0; /* Adjust padding for top, right, bottom, left */
+  float: right;
+  padding: 10px;
+  /* Reduce the top and bottom padding */
+
 }
 
-.search-bar form {
-    display: flex;
-    align-items: center;
+/* Style for the search input and button */
+#search-bar {
+  display: flex;
+  height: 35px;
+  /* Adjust the height to your preference */
 }
 
-.search-bar input[type="text"] {
-    padding: 7px 30px;
-    margin: 0;
-    width: 600px; /* Adjust the width as needed */
-    border: none; /* Remove default input border */
-    border-radius: 20px; /* Same border-radius as the parent .search-bar */
+#search-text {
+  padding: 8px 14px;
+  border-radius: 20px 0 0 20px;
+  /* Add border-radius to the left corners */
+border: none;
+
 }
 
-.search-bar button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    margin-left: 10px; /* Add margin to separate input and button */
-    border-top-right-radius: 20px; /* Adjust the border radius for the button */
-    border-bottom-right-radius: 20px; /* Adjust the border radius for the button */
+#search-btn {
+  background-color: #555;
+  color: white;
+  padding: 0px 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 8px;
+  border-radius: 0 20px 20px 0;
+  /* Add border-radius to the right corners */
+  /* Add inset box-shadow for the pressed effect */
+}
+
+#search-btn i {
+  font-size: 17px;
+  margin: 7px;
+}
+
+/* Adjust styles for the Admin submenu */
+.dropdownn-content1 {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdownn:hover .dropdownn-content1 {
+  display: block;
+}
+
+/* Style for the Admin submenu links */
+.dropdownn-content1 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover for Admin submenu */
+.dropdownn-content1 a:hover {
+  background-color: #ddd;
+}
+
+.ButtonContainer {
+  display: block;
+}
+
+.ButtonContainer li a {
+  height: 55px;
 }

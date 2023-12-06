@@ -45,7 +45,7 @@ if (isset($_GET['product_id'])) {
 <?php include '../Page/NavBar.php'; ?>
 <body>
 
-<div class="container mt-5 Section">
+<div class="container mt-5 Section Container-animate">
 <h2 class="mb-4"><p>Edit Product</p></h2>
 
     <form action="../Control/update_product.php" method="post" enctype="multipart/form-data">
