@@ -98,6 +98,9 @@ function redirectToPage14() {
 //         img.style.display = 'none';
 //     });
 // });
+
+// 
+
 document.addEventListener('DOMContentLoaded', function () {
     const buttons = document.querySelectorAll('.explore-btn');
     const images = document.querySelectorAll('.image-column img[id^="follow-img"]');

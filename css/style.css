@@ -152,7 +152,7 @@ body{
 }
 
 /* css Button Cart */
-.btn {
+/* .btn {
    display: flex-inline ;
    justify-content: center;
    align-items: center;
@@ -165,5 +165,5 @@ body{
 .btn a {
    color: black !important;
    font-weight: 500;
-}
+} */
 /*  */

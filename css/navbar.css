@@ -15,11 +15,12 @@ body {
 }
 
 .navbarr ul li a {
-    text-decoration: none;
-}
+    transition: background-color 0.3s, color 0.3s;}
 
-.navbarr ul li a .dropdownn-content a {
-    text-decoration: none;
+    .navbarr a:hover,
+    .dropdownn:hover .dropbtnn {
+        background-color: #ddd;
+        color: black;
 }
 
 .navbarr ul {
