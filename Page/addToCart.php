@@ -4,9 +4,7 @@ session_start();
 require '../config.php';
 require '../Model/DetailCartModel.php';
 
-
-
-if (isset($_POST['dathang']) && ($_POST['dathang'])) {
+if(isset($_POST['dathang']) && ($_POST['dathang'])) {
 
     $product_id = $_POST['product_id'];
     $user_id = $_POST['user_id'];
@@ -18,7 +16,7 @@ if (isset($_POST['dathang']) && ($_POST['dathang'])) {
     $id_ProductID = $row_CartDetail["ProductID"];
 
 
-    if ($id_ProductID == null) {
+    if($id_ProductID == null) {
 
         // Lấy id_cart thông qua id_user
         $select_idCart = "SELECT id_cart FROM cart WHERE id_user = $user_id";
@@ -26,7 +24,7 @@ if (isset($_POST['dathang']) && ($_POST['dathang'])) {
         $row = $result->fetch_assoc();
         $id_Cart = $row["id_cart"];
 
-        if (!isset($_SESSION['cart']))
+        if(!isset($_SESSION['cart']))
             $_SESSION['cart'] = array();
         array_push($_SESSION['cart'], $productArr);
         header('location: viewCart.php');

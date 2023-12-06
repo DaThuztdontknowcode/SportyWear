@@ -1,4 +1,7 @@
 <?php
+// if (session_status() == PHP_SESSION_NONE) {
+//     session_start();
+// }
 session_start();
 $name = $_SESSION['user_name'];
 $user_id = $_SESSION['user_id'];
@@ -16,9 +19,9 @@ $user_id = $_SESSION['user_id'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <script>
     "use strict";
-
     ! function() {
         var t = window.driftt = window.drift = window.driftt || [];
         if (!t.init) {
@@ -78,7 +81,7 @@ $user_id = $_SESSION['user_id'];
                     <a href="../Page/all_products.php?category=14">Accessories</a>
                 </div>
             </li>
-            <li style="float: right;"><a href="./viewCart.php"><i class="fa-solid fa-shopping-cart"></i></a></li>
+            <li style="float: right;"><a href="./viewCart.php"><i claxss="fa-solid fa-shopping-cart"></i></a></li>
             <li style="float: right;"><a href="../Page/user_page.php"><i class="fa-solid fa-user"></i></a></li>
             <ul>
                 <li class="search-bar">

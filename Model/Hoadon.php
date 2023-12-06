@@ -3,13 +3,15 @@ class HoaDon
 {
     public $id_hoadon;
 
-    public $id_cart;
+    public $id_user;
 
+    // public $totalprice;
 
-    public function __construct($id_hoadon, $id_cart)
+    public function __construct($id_hoadon, $id_user, $totalprice)
     {
         $this->id_hoadon = $id_hoadon;
-        $this->id_cart = $id_cart;
+        $this->id_cart = $id_user;
+        // $this->totalprice = $totalprice;
     }
 }
 ?>

@@ -5,13 +5,13 @@ global $conn;
 $cartDetail = new DetailCartModel($conn);
 
 
-if (isset($_GET["product-id"]) && isset($_GET["cart-id"])) {
+if(isset($_GET["product-id"]) && isset($_GET["cart-id"])) {
     $product_id = $_GET["product-id"];
     $cart_id = $_GET["cart-id"];
     $cartDetail->RemoveCartDetail($cart_id, $product_id);
 }
 
-if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
+if(isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
     $cartID = $_POST["id-cart"];
     $productID = $_POST["product-id"];
     $newQuantity = $_POST["new-quantity"];
@@ -51,7 +51,7 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
 
                 $select_cartID = "SELECT * FROM cart WHERE id_user = $user_id ";
                 $result_cartID = $conn->query($select_cartID);
-                while ($row_cartID = $result_cartID->fetch_assoc()) {
+                while($row_cartID = $result_cartID->fetch_assoc()) {
                     $cartID = new Cart(
                         $row_cartID["id_cart"],
                         $row_cartID["id_user"]
@@ -61,9 +61,9 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
                 $sql = "SELECT * FROM cartdetail WHERE id_cart = $cartID->id_cart";
                 $result = $conn->query($sql);
                 $total = 0;
-                if ($result->num_rows > 0) {
+                if($result->num_rows > 0) {
                     $i = 0;
-                    while ($row = $result->fetch_assoc()) {
+                    while($row = $result->fetch_assoc()) {
                         $i++;
                         $product = new CartDetail(
                             $row["id_cartDetail"],
@@ -73,7 +73,7 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
                         );
                         $selectProduct = "SELECT * FROM products WHERE ProductID = '$product->ProductID'";
                         $resultProduct = $conn->query($selectProduct);
-                        while ($row = $resultProduct->fetch_assoc()) {
+                        while($row = $resultProduct->fetch_assoc()) {
                             $productDetail = new Product(
                                 $row["ProductID"],
                                 $row["ProductName"],
@@ -162,39 +162,23 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
                 </div>
 
                 <div class=" d-flex justify-content-center w-100 mt-4">
-                    <button class="btn-checkout"><a class="checkout" href="#">Check Out</a></button>
+                    <button class="btn-checkout"><a class="checkout" href="./addToHoaDon.php">Check Out</a></button>
                 </div>
             </div>
 
         </div>
 
     </div>
-    <script>
+    <!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
         const checkout = document.querySelector(".btn-checkout a");
         if (checkout) {
             checkout.addEventListener("click", function(event) {
                 event.preventDefault();
-                <?php
-
-                    require_once '../config.php';
-                    require_once '../Model/HoaDonModel.php';
-
-                    global $conn;
-                    $hoadon = new HoaDonModel($conn);
-                    $user_id = $_SESSION['user_id'];
-                    $hoadon->AddToHoaDon($product->id_cart);
-
-
-
-                    ?>
             });
         }
     });
-    </script>
-
-
-    </script>
+    </script> -->
 </body>
 
 </html>
