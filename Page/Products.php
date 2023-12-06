@@ -23,7 +23,6 @@ include '../Model/load_categories.php';
 
 <div class="Shirt Section">
 </div>
-
 </div>
   
         <div class="Wrap_Products">

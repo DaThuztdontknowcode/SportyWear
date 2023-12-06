@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 
     <link rel="stylesheet" href="../css/homestyle.css">
-    <link rel="stylesheet" href="../css/mobile.css">
     
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -22,14 +21,14 @@
 <header>
     <div class="container-fluid p-0">
         <!-- Background image or slideshow here -->
-        <div class="header-background" style="background-image: url('https://i.pinimg.com/564x/58/49/4a/58494a343cc16e8e73ff94bc812a97cc.jpg');">
+        <div class="header-background" style="background-image: url('https://i.pinimg.com/736x/87/49/15/8749155a4b1180243f283384e55981de.jpg');">
             <!-- Overlay with Opacity to darken the image for text visibility -->
             <div class="header-overlay" style="background: rgba(0, 0, 0, 0.5);">
                 <div class="container text-center">
                     <div class="row">
                         <div class="col-md-7 col-sm-12 text-white">
                             <h6>YOUR SPORTING ADVENTURE BEGINS HERE</h6>
-                            <h1>Welcome to SportyWear</h1>
+                            <h1>Welcome to SPORTYWEAR</h1>
                             <p>Discover the latest sports gear and apparel to elevate your performance.</p>
                             <div class="view">
                                 <button class="btn btn-light primary-btn px-5 py-2" onclick="scrollToSection('section-1')">Impressive Figures</button>
@@ -146,7 +145,13 @@
         <h2>Lebron Collection</h2>
     </div>
     <div class="image-row">
+        <div class="image-column">
+            <img src="https://i.pinimg.com/564x/ec/2e/34/ec2e34586df8da3b918f9ef882e890ff.jpg" alt="Image 1">
+            <button class="explore-btn">Explore Now</button>
+            <img id="follow-img" src="https://images.footballfanatics.com/nike-white-nba-headband_pi2694000_ff_2694897_full.jpg?_hv=2" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
+        </div>
         
+<<<<<<< HEAD
             <div class="col-lg-3 col-md-4 col-sm-6 image-column">
                 <img class="img-fluid" src="https://i.pinimg.com/564x/ec/2e/34/ec2e34586df8da3b918f9ef882e890ff.jpg" alt="Image 1">
                 <button class="explore-btn">Explore Now</button>
@@ -161,22 +166,115 @@
                 <img id="follow-img2" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/539492/01/mod01/fnd/PNA/fmt/png/PUMA-x-TMC-Everyday-Hussle-Men's-Sweatshorts" alt="Follow Image" style="display: none; position: absolute;height: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
             </div>
         
+=======
+        <div class="image-column">
+            <img src="https://i.pinimg.com/564x/b1/c9/b1/b1c9b11586ded034794cf2a7f6e86f0f.jpg" alt="Image 2">
+            <button class="explore-btn" onclick="redirectToProduct44()">Explore Now</button>
+            <img id="follow-img2" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/539492/01/mod01/fnd/PNA/fmt/png/PUMA-x-TMC-Everyday-Hussle-Men's-Sweatshorts" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
+        </div>
+>>>>>>> 0c585b43524032d946d452a58b9cfb367a73a79d
 
-        <div class="col-lg-3 col-md-4 col-sm-6 image-column">
-            <img class="img-fluid" src="https://i.pinimg.com/564x/93/c7/bd/93c7bd60a0941c5a68591b6d74788cc7.jpg" alt="Image 3">
+        <div class="image-column">
+            <img src="https://i.pinimg.com/564x/93/c7/bd/93c7bd60a0941c5a68591b6d74788cc7.jpg" alt="Image 3">
             <button class="explore-btn">Explore Now</button>
             <img id="follow-img3" src="https://images.footballfanatics.com/nike-white-nba-headband_pi2694000_ff_2694897_full.jpg?_hv=2" alt="Follow Image" style="display: none; position: absolute;height: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
         </div>
 
-        <div class="col-lg-3 col-md-4 col-sm-6 image-column">
-            <img class="img-fluid" src="https://i.pinimg.com/564x/c0/b2/02/c0b202cd2463bff530fdb3d091c5e4e1.jpg" alt="Image 4">
+        <div class="image-column">
+            <img src="https://i.pinimg.com/564x/c0/b2/02/c0b202cd2463bff530fdb3d091c5e4e1.jpg" alt="Image 4">
             <button class="explore-btn">Explore Now</button>
             <img id="follow-img4" src="https://images.footballfanatics.com/nike-white-nba-headband_pi2694000_ff_2694897_full.jpg?_hv=2" alt="Follow Image" style="display: none; position: absolute;height: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
         </div>
     </div>
 </section>
+<section class="section-4">
+    <div class="container text-center">
+    <h1 style="font-weight: bold;">Celebrities Who Love Our Products</h1>
+    <h5 style="font-weight: 400;">See what famous personalities have to say about us</p>
+    </div>
+    <div class="team row">
+        <div class="col-md-4 col-12 text-center hidden">
+            <div class="card mr-2 d-inline-block p-4 shadow-lg animate-element">
+                <div class="card-img-top">
+                    <img src="https://kenh14cdn.com/203336854389633024/2022/6/13/photo-1-1655079616626774867903.jpg" class="img-fluid p-4 border-radius">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Minh Tu</h3>
+                    <p class="card-text">
+                        "I absolutely love the products from this brand. They are not only stylish but also comfortable."
+                    </p>
+                    <a href="product_detail.php?product_id=31" class="text-secondary text-decoration-none">
+                        See More
+                    </a>
+                    <p class="text-secondary">SUPER MODEL</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-12 text-center hidden">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card mr-2 d-inline-block p-4 shadow-lg ">
+                            <div class="card-img-top">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Son_Tung_M-TP_1_%282017%29.png"
+                                    class="img-fluid p-4 border-radius">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Son Tung MTP</h3>
+                                <p class="card-text">
+                                    "I've been a fan of these products for years. inner consistensy.Quality and style - they have it all."
+                                </p>
+                                <a href="product_detail.php?product_id=27" class="text-secondary text-decoration-none">
+                                    See More
+                                </a>
+                                <p class="text-secondary">SINGER</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card mr-2 d-inline-block p-4 shadow-lg">
+                            <div class="card-img-top">
+                                <img src="https://bizweb.dktcdn.net/100/345/548/products/2cv19007-s32-2bt19008-s32-2cg19013-s32-0af32867-9d2f-4552-8a2a-24eba659a398.jpg?v=1633752733017"
+                                    class="img-fluid w-50 p-4 border-radius ">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Doan Van Hau</h3>
+                                <p class="card-text">
+                                    "I can't get enough of these products. negative space collage.They are a must-have in my wardrobe."
+                                </p>
+                                <a href="#" class="text-secondary text-decoration-none">
+                                    See More
+                                </a>
+                                <p class="text-secondary">Baller</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="col-md-4 col-12 text-center">
+            <div class="card mr-2 d-inline-block shadow-lg">
+                <div class="card-img-top">
+                    <img src="https://images2.thanhnien.vn/thumb_w/686/528068263637045248/2023/7/13/b-ray-16892538684861219039644-0-106-792-700-crop-16892541975471605791359.jpg"
+                        class="img-fluid p-4 border-radius">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">BRAY</h3>
+                    <p class="card-text">
+                        "I've been a loyal customer of this brand for years. negative space collage movement. .Their products are top-notch."
+                    </p>
+                    <a href="product_detail.php?product_id=15" class="text-secondary text-decoration-none">
+                        See More
+                    </a>
+                    <p class="text-secondary">RAPPER</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+    
 
     
     <button id="scrollToTopBtn">&#8679;</button>

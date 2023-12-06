@@ -15,6 +15,7 @@ li {
   overflow: hidden;
 }
 
+<<<<<<< HEAD
 /* Style for navigation bar links */
 .navbarr a {
   display: block;
@@ -33,6 +34,15 @@ li {
 }
 .icon a {
   padding: 8px 16px;
+=======
+.navbarr ul li a {
+    transition: background-color 0.3s, color 0.3s;}
+
+    .navbarr a:hover,
+    .dropdownn:hover .dropbtnn {
+        background-color: #ddd;
+        color: black;
+>>>>>>> 0c585b43524032d946d452a58b9cfb367a73a79d
 }
 
 /* ... (remaining styles) */

@@ -21,7 +21,6 @@ if (!isset($_SESSION['user_name'])) {
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>user page</title>
 
-   <!-- custom css file link  -->
    <link rel="stylesheet" href="../css/style.css">
 
 </head>
@@ -43,7 +42,7 @@ if (!isset($_SESSION['user_name'])) {
       ?>
       </div>
       <h3>hi, <span>user</span></h3>
-      <h1>welcome <span><?php echo $name; ?></span></h1>      <p>this is an user page</p>
+      <h1>welcome <span><?php echo $name; ?></span></h1><p>this is an user page</p>
       <a href="update_profile_page_user.php" class="btn">update profile</a>
       <a href="../Control/logout.php" class="btn"> 
       logout</a>

@@ -17,6 +17,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <php>
 
         <div class="container mt-5 Section">
@@ -24,6 +25,59 @@
                 <?php
                 if (isset($_GET['category'])) {
                     $selectedCategory = $_GET['category'];
+=======
+<div class="container mt-5 Section">
+    <div class="sort-container">
+    <select id="sortPrice" onchange="sortProducts()">
+        <option value="">Sort by</option>
+        <option value="asc">Price Low to High</option>
+        <option value="desc">Price High to Low</option>
+    </select>
+    </div>
+<script>
+    function sortProducts() {
+        var sortValue = document.getElementById('sortPrice').value;
+        var currentUrl = window.location.href;
+        var newUrl = new URL(currentUrl);
+        newUrl.searchParams.set('sort', sortValue);
+        window.location.href = newUrl.toString();
+    }
+</script>
+    <div class="container mt-5 Section">
+        <div class="Title_container">
+        <?php
+        if (isset($_GET['category'])) {
+            $selectedCategory = $_GET['category'];
+        
+            // Display the category title based on the selected category
+            switch ($selectedCategory) {
+                case 1:
+                    echo '<h1 class="category-title">Shoes</h1>';
+                    break;
+                case 2:
+                    echo '<h1 class="category-title">Shirt</h1>';
+                    break;
+                case 3:
+                    echo '<h1 class="category-title">Short</h1>';
+                    break;
+                default:
+                    // Handle other categories as needed
+                    break;
+            }
+        }else{
+            echo '<h1 class="category-title">All products</h1>';
+              
+        }
+        
+        
+        
+        
+        ?>
+        </div>
+        
+        <div class="row">
+        <?php include '../Page/filter_results.php';?>
+>>>>>>> 0c585b43524032d946d452a58b9cfb367a73a79d
 
                     // Display the category title based on the selected category
                     switch ($selectedCategory) {
