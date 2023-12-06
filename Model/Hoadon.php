@@ -7,11 +7,11 @@ class HoaDon
 
     // public $totalprice;
 
-    public function __construct($id_hoadon, $id_user, $totalprice)
+    public function __construct($id_hoadon, $id_user)
     {
         $this->id_hoadon = $id_hoadon;
         $this->id_cart = $id_user;
-        // $this->totalprice = $totalprice;
+        
     }
 }
 ?>
