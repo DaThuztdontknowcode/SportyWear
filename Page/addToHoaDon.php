@@ -17,5 +17,4 @@ $hoadon->AddHoaDon($id_Cart);
 
 header('location: viewCart.php');
 
-
 ?>

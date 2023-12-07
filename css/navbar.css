@@ -117,3 +117,9 @@ body {
     border-top-right-radius: 20px; /* Adjust the border radius for the button */
     border-bottom-right-radius: 20px; /* Adjust the border radius for the button */
 }
+.dropdownn:hover + .home-link,
+.home-link:hover {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+

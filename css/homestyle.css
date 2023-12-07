@@ -184,6 +184,66 @@ header .container .col-md-7 p {
     border-top-left-radius:170px ;
 }
 /*  */
+.section-2 {
+    background-color: #858585; /* Light grey background */
+}
+
+#section-2 .row {
+    margin-top: 1rem;
+}
+
+#section-2 .card {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2); /* Add shadow for depth */
+    transition: 0.3s; /* Smooth transition for mouse hover effects */
+    border: none; /* Remove the default border */
+}
+
+#section-2 .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Larger shadow on hover for a "lifting" effect */
+}
+
+#section-2 .card-img-top {
+    width: 100%; /* Ensure the image covers the card width */
+    border-top-left-radius: 0; /* Remove border radius if desired */
+    border-top-right-radius: 0;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the card area without stretching */
+}
+
+#section-2 .card-body {
+    padding: 1rem; /* Add some padding inside the card */
+    background: white; /* White background for the text area */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Ensure text is centered as well */
+    padding: 1rem;
+    height: 100%; 
+}
+
+#section-2 .card-title {
+    font-size: 1.25rem; /* Larger font size for titles */
+    margin-bottom: .5rem;
+}
+
+#section-2 .card-text {
+    font-size: 1rem; /* Standard font size for text */
+    margin-bottom: 1rem;
+}
+
+#section-2 .btn-primary {
+    background-color: #5e5e5e; /* Bootstrap primary color */
+    border-color: #7c7c7c;
+    padding: .5rem 1rem; /* Larger button padding */
+    border-radius: .25rem; /* Rounded border for the buttons */
+    font-size: 1rem; /* Standard font size for button text */
+    line-height: 1.5; /* Standard line height */
+    transition: background-color .15s ease-in-out, border-color .15s ease-in-out; /* Smooth transition for hover effects */
+}
+
+#section-2 .btn-primary:hover {
+    background-color: #ff5151; /* Darken button on hover */
+    border-color: rgb(255, 94, 94);
+}
 
 /*  */
 .card-body .pricing h1 {
@@ -193,40 +253,6 @@ header .container .col-md-7 p {
 
 /* section 3*/
 
-/* .section-3 {
-    margin-top: 15vmin ;
-    height: 70vmin;
-    background: var(--bggradient);
-}
-
-.section-3 .desktop {
-    background : white;
-    display: inline-block;
-    border-radius: 3em ;
-    padding: 2vmin 4.5vmin;
-    margin: 1em;
-}
-
-.section-3 .col-md-12 h1 {
-    padding: 2em 0 0.5em 0 ;
-    color: white;
-    font-size: 6vmin;
-}
-
-.section-3 .col-md-12 p {
-    padding: 0 4em ;
-    padding-bottom: 2em;
-    font-size: 3vmin;
-    color: white;
-}
-
-.section-3 .desktop h3 {
-    font-size: 4vmin ;
-}
-
-.section-3 .desktop p {
-    font-size: 2vmin ;
-} */
 .section-3 .section-title {
     text-align: center;
     margin-top: 20px; /* Thêm khoảng cách phía trên tiêu đề */
