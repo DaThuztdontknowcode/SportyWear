@@ -1,3 +1,10 @@
+
+*{
+    box-sizing: border-box;
+}
+
+
+
 .Section{
     padding-top: 15px;
 }
@@ -62,3 +69,70 @@ h1{
     height: 50vh;
     width: auto;
 }
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    height: 560px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-in-out; /* Sử dụng animation */
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa; /* Màu nền */
+    border: 1px solid #dee2e6; /* Viền */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bóng đổ */
+    margin-bottom: 15px;
+}
+
+.filter-container label {
+    margin-right: 10px;
+}
+
+.filter-container select {
+    padding: 8px;
+    border: 1px solid #ced4da; /* Viền input */
+    border-radius: 4px;
+    outline: none;
+}
+
+.filter-container select:hover {
+    border-color: #6c757d; /* Màu viền khi hover */
+}
+
+.filter-container select:focus {
+    border-color: #007bff; /* Màu viền khi focus */
+}
+
+.filter-container select:disabled {
+    opacity: 0.7; /* Độ mờ khi bị disabled */
+}
+
+.filter-container select option {
+    background-color: #fff; /* Màu nền option */
+    color: #495057; /* Màu chữ option */
+}
+
+.filter-container select option:hover {
+    background-color: #007bff; /* Màu nền khi hover option */
+    color: #fff; /* Màu chữ khi hover option */
+}
+
+/* Thêm hover animation cho nút a */
+

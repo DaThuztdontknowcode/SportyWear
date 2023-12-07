@@ -57,7 +57,6 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
                         $row_cartID["id_user"]
                     );
                 }
-
                 $sql = "SELECT * FROM cartdetail WHERE id_cart = $cartID->id_cart";
                 $result = $conn->query($sql);
                 $total = 0;

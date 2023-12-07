@@ -21,18 +21,19 @@
 <header>
     <div class="container-fluid p-0">
         <!-- Background image or slideshow here -->
-        <div class="header-background" style="background-image: url('https://i.pinimg.com/736x/87/49/15/8749155a4b1180243f283384e55981de.jpg');">
+        <div class="header-background" style="background-image: url('https://i.pinimg.com/564x/d0/49/1a/d0491acbb51bb1489f3df3953ecb96e5.jpg');">
             <!-- Overlay with Opacity to darken the image for text visibility -->
             <div class="header-overlay" style="background: rgba(0, 0, 0, 0.5);">
                 <div class="container text-center">
                     <div class="row">
                         <div class="col-md-7 col-sm-12 text-white">
                             <h6>YOUR SPORTING ADVENTURE BEGINS HERE</h6>
-                            <h1>Welcome to SPORTYWEAR</h1>
+                            <h1>Welcome to SPORTWEAR</h1>
                             <p>Discover the latest sports gear and apparel to elevate your performance.</p>
                             <div class="view">
                                 <button class="btn btn-light primary-btn px-5 py-2" onclick="scrollToSection('section-1')">Impressive Figures</button>
                                 <button class="btn btn-light primary-btn px-5 py-2" onclick="scrollToSection('section-3')">Another Section</button>
+                                <button class="btn btn-light primary-btn px-5 py-2" onclick="redirectToPro()">SHOPPING NOW</button>
                             </div>
                         </div>
                         <div class="col-md-5 col-sm-12">
@@ -139,37 +140,75 @@
     </div>
 </div> 
 </section> -->
-<!-- Thêm sau section-2 -->
-<section id="section-3" class="section-3 container-fluid p-0">
-    <div class="section-title">
-        <h2>Lebron Collection</h2>
-    </div>
-    <div class="image-row">
-        <div class="image-column">
-            <img src="https://i.pinimg.com/564x/ec/2e/34/ec2e34586df8da3b918f9ef882e890ff.jpg" alt="Image 1">
-            <button class="explore-btn">Explore Now</button>
-            <img id="follow-img" src="https://images.footballfanatics.com/nike-white-nba-headband_pi2694000_ff_2694897_full.jpg?_hv=2" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
-        </div>
-        
-        <div class="image-column">
-            <img src="https://i.pinimg.com/564x/b1/c9/b1/b1c9b11586ded034794cf2a7f6e86f0f.jpg" alt="Image 2">
-            <button class="explore-btn" onclick="redirectToProduct44()">Explore Now</button>
-            <img id="follow-img2" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/539492/01/mod01/fnd/PNA/fmt/png/PUMA-x-TMC-Everyday-Hussle-Men's-Sweatshorts" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
+<section id="section-2" class="container my-5">
+    <div class="row">
+        <!-- Category 1 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="https://i.pinimg.com/564x/4c/9a/b8/4c9ab8c37b93ef118defe2b2616a2ba8.jpg" alt="Basketball Gear">
+                <div class="card-body">
+                    <h5 class="card-title">Nike Basketball</h5>
+                    <p class="card-text">Styles made for your game.</p>
+                    <a href="#" class="btn btn-primary">Shop</a>
+                </div>
+            </div>
         </div>
 
-        <div class="image-column">
-            <img src="https://i.pinimg.com/564x/93/c7/bd/93c7bd60a0941c5a68591b6d74788cc7.jpg" alt="Image 3">
-            <button class="explore-btn">Explore Now</button>
-            <img id="follow-img3" src="https://images.footballfanatics.com/nike-white-nba-headband_pi2694000_ff_2694897_full.jpg?_hv=2" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
+        <!-- Category 2 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="https://i.pinimg.com/564x/3a/03/0a/3a030af410f6f69468a05e2e37af11d1.jpg" alt="Golf Gear">
+                <div class="card-body">
+                    <h5 class="card-title">Nike Golf</h5>
+                    <p class="card-text">Conquer any course in style.</p>
+                    <a href="#" class="btn btn-primary">Shop</a>
+                </div>
+            </div>
         </div>
 
-        <div class="image-column">
-            <img src="https://i.pinimg.com/564x/c0/b2/02/c0b202cd2463bff530fdb3d091c5e4e1.jpg" alt="Image 4">
-            <button class="explore-btn">Explore Now</button>
-            <img id="follow-img4" src="https://images.footballfanatics.com/nike-white-nba-headband_pi2694000_ff_2694897_full.jpg?_hv=2" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
+        <!-- Category 3 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="https://i.pinimg.com/564x/80/c6/c0/80c6c03fa3e1d11760e3559dbd5b8b74.jpg" alt="Trail Gear">
+                <div class="card-body">
+                    <h5 class="card-title">Nike Trail</h5>
+                    <p class="card-text">Gear that leads to wild places.</p>
+                    <a href="#" class="btn btn-primary">Shop</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+<!-- Thêm sau section-2 -->
+<section id="section-3" class="section-3 container-fluid p-0">
+    <div class="section-title text-center">
+        <h2>Lebron Collection</h2>
+    </div>
+    
+    <div class="row no-gutters">
+        <div class="col-12 col-sm-6 col-md-6 image-column text-center">
+            <img class="img-fluid" src="https://i.pinimg.com/564x/ec/2e/34/ec2e34586df8da3b918f9ef882e890ff.jpg" alt="Image 1">
+            <button class="btn explore-btn mt-2">Explore Now</button>
+        </div>
+        
+        <div class="col-12 col-sm-6 col-md-6 image-column text-center">
+            <img class="img-fluid" src="https://i.pinimg.com/564x/b1/c9/b1/b1c9b11586ded034794cf2a7f6e86f0f.jpg" alt="Image 2">
+            <button class="btn explore-btn mt-2" onclick="redirectToProduct44()">Explore Now</button>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-6 image-column text-center">
+            <img class="img-fluid" src="https://i.pinimg.com/564x/93/c7/bd/93c7bd60a0941c5a68591b6d74788cc7.jpg" alt="Image 3">
+            <button class="btn explore-btn mt-2">Explore Now</button>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-6 image-column text-center">
+            <img class="img-fluid" src="https://i.pinimg.com/564x/c0/b2/02/c0b202cd2463bff530fdb3d091c5e4e1.jpg" alt="Image 4">
+            <button class="btn explore-btn mt-2">Explore Now</button>
+        </div>
+    </div>
+</section>
+
 <section class="section-4">
     <div class="container text-center">
     <h1 style="font-weight: bold;">Celebrities Who Love Our Products</h1>

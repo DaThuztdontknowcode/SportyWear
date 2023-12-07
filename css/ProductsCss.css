@@ -1,45 +1,83 @@
-body{
-   margin-top: 0px;
-   padding: 0px;
-   
+body, h1, h2, h3, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
 }
 
-.Title-Container{
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+
+
+#search-textt {
+    flex: 1; /* Take up remaining space in the flex container */
+    padding: 8px 16px;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    margin: 0 !important;
+  }
+  
+  #search-btnn {
+    background-color: #555;
+    color: white;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0;
+  }
+
+
+.Title-Container {
 
     display: flex;
     justify-content: center;
     margin: 0px;
     padding: 0px;
     text-align: center;
-    
+
 }
-.Title-Container h1{
-    background-color:#000;
+
+
+.Title-Container h1 {
+    background-color: #000;
     color: #fff;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 6px;
     padding-bottom: 6px;
     border-radius: 10px;
-    border: 1px solid #ddd ;
+    border: 1px solid #ddd;
     border-radius: 8px;
     text-align: center;
     justify-content: center;
 
-   
+
 }
 
 .slider-container {
-    width: 300px; /* Đặt kích thước của container */
-    margin: auto; /* Đưa container ra giữa trang */
+    width: 300px;
+    /* Đặt kích thước của container */
+    margin: auto;
+    /* Đưa container ra giữa trang */
     margin-bottom: 20px;
 }
+
 .slider img {
-    max-width: 500px; /* Giảm kích thước của ảnh */
-    max-height: 350px; /* Đặt chiều cao tối đa của ảnh */
-    margin: 0 auto; /* Đưa ảnh ra giữa slide */
-    object-fit: contain; /* Hiển thị toàn bộ ảnh trong kích thước được đặt */
+    max-width: 500px;
+    /* Giảm kích thước của ảnh */
+    max-height: 350px;
+    /* Đặt chiều cao tối đa của ảnh */
+    margin: 0 auto;
+    /* Đưa ảnh ra giữa slide */
+    object-fit: contain;
+    /* Hiển thị toàn bộ ảnh trong kích thước được đặt */
 }
+
 /* ProductsCss.css */
 
 /* Đảm bảo màu chữ và chữ gạch chân của liên kết trong slide giống với văn bản bình thường */
@@ -55,62 +93,79 @@ body{
 }
 
 .slider {
-    text-align: center; /* Căn giữa văn bản trong slider */
+    text-align: center;
+    /* Căn giữa văn bản trong slider */
 }
 
-.slider-wrapper{
-    border: 3px solid #ddd ;
+.slider-wrapper {
+    border: 3px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Bóng đổ */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* Bóng đổ */
 
 }
-.Button-Container{
+
+.Button-Container {
     margin-top: 20px;
     margin-bottom: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .prev,
 .next {
     font-size: 18px;
-    background-color: #000; /* Màu nền của nút */
-    color: white; /* Màu chữ của nút */
+    background-color: #000;
+    /* Màu nền của nút */
+    color: white;
+    /* Màu chữ của nút */
     border: none;
     padding: 10px;
     cursor: pointer;
-    width: 100px; /* Đặt chiều dài của nút */
-    border-radius: 5px; /* Đặt đường cong cho các góc */
+    width: 100px;
+    /* Đặt chiều dài của nút */
+    border-radius: 5px;
+    /* Đặt đường cong cho các góc */
 }
 
 .prev {
-    margin-right: 20px; /* Đặt vị trí nút "Previous" từ bên trái */
+    margin-right: 20px;
+    /* Đặt vị trí nút "Previous" từ bên trái */
 }
 
 .next {
-    margin-left: 20px; /* Đặt vị trí nút "Next" từ bên phải */
+    margin-left: 20px;
+    /* Đặt vị trí nút "Next" từ bên phải */
 }
 
 .prev:hover,
 .next:hover {
-    background-color: #000; /* Màu nền của nút khi di chuột qua */
+    background-color: #000;
+    /* Màu nền của nút khi di chuột qua */
 }
 
 .product-grid {
     text-decoration: none;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px; /* Khoảng cách giữa các ô sản phẩm */
-    justify-content: center; /* Căn giữa các ô sản phẩm theo chiều ngang */
+    gap: 20px;
+    /* Khoảng cách giữa các ô sản phẩm */
+    justify-content: center;
+    /* Căn giữa các ô sản phẩm theo chiều ngang */
     align-items: center;
     margin: 10px;
 }
-.Wrap_Products{
-    border: 3px solid #ddd; /* Đường viền trên */
+
+.Wrap_Products {
+    border: 3px solid #ddd;
+    /* Đường viền trên */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng với mức độ nhẹ */
-    padding: 20px; /* Khoảng cách giữa đường viền và nội dung */
-    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Đổ bóng với mức độ nhẹ */
+    padding: 20px;
+    /* Khoảng cách giữa đường viền và nội dung */
+
 }
 
 
@@ -119,82 +174,131 @@ body{
     text-decoration: none;
     color: #333;
     position: relative;
-    
+
+}
+
+.product-item-animate {
+    animation: fadeInUp 1s ease-in-out;
+    /* Sử dụng animation */
+
+}
+
+.product-item-slide {
+    animation: fadeIn 1s ease-in-out;
+    /* Sử dụng animation */
+
 }
 
 .product-card {
-    border: 1px solid #ddd; /* Viền của card */
-    border-radius: 8px; /* Bo tròn các góc */
+    border: 1px solid #ddd;
+    /* Viền của card */
+    border-radius: 8px;
+    /* Bo tròn các góc */
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Bóng đổ */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* Bóng đổ */
 }
 
 .product-card img {
     text-decoration: none;
     width: 100%;
     height: auto;
-    object-fit: cover; /* Đảm bảo hình ảnh vừa với kích thước của phần tử */
+    object-fit: cover;
+    /* Đảm bảo hình ảnh vừa với kích thước của phần tử */
 }
 
 .product-info {
     text-decoration: none;
-    padding: 10px; /* Khoảng cách nội dung trong card */
+    padding: 10px;
+    /* Khoảng cách nội dung trong card */
 }
 
 .see-all-container {
     text-align: center;
-    margin-top: 30px; /* Khoảng cách giữa danh sách sản phẩm và liên kết "See All" */
+    margin-top: 30px;
+    /* Khoảng cách giữa danh sách sản phẩm và liên kết "See All" */
 }
-.product-link{
+
+.product-link {
     text-decoration: none;
     color: black;
 }
+
 .see-all-link {
     display: inline-block;
     background-color: #000;
     padding: 10px 20px;
-    color: #fff; /* Màu chữ của liên kết */
+    color: #fff;
+    /* Màu chữ của liên kết */
     text-decoration: none;
-    border-radius: 5px; /* Bo tròn góc */
+    border-radius: 5px;
+    /* Bo tròn góc */
     font-weight: bold;
 }
 
-.Section{
- 
+.Section {
+
     padding-top: 35px;
     margin-bottom: 25px;
     margin-left: 15px;
     margin-right: 15px;
-    
+
 }
 
 .Product_Name {
-    width: 300px; /* Đặt chiều rộng cho thẻ h3 */
-    margin: 0 auto; /* Căn giữa theo chiều ngang */
+    width: 300px;
+    /* Đặt chiều rộng cho thẻ h3 */
+    margin: 0 auto;
+    /* Căn giữa theo chiều ngang */
 
 }
 
-.Shirt{
+.Shirt {
     margin-top: 45px;
 }
+
 select,
 input {
-  margin-bottom: 10px;
-  padding: 8px;
-  width: 20%;
-  box-sizing: border-box;
-  border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 20%;
+    box-sizing: border-box;
+    border-radius: 5px;
 }
 
 button {
-  background-color: #3498db;
-  color: #fff;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  border-radius: 15%;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15%;
 }
 
 button:hover {
-  background-color: #2980b9;
+    background-color: #2980b9;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+
+    }
+
+    to {
+        opacity: 1;
+
+    }
 }

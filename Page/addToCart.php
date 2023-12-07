@@ -3,6 +3,8 @@ session_start();
 
 require '../config.php';
 require '../Model/DetailCartModel.php';
+require_once '../Model/HoaDonModel.php'; // Thêm lớp HoaDonModel
+
 
 if (isset($_POST['dathang']) && ($_POST['dathang'])) {
     if (!isset($_SESSION['user_id'])) {

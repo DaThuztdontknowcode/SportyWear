@@ -12,34 +12,29 @@ if (isset($_GET['product_id'])) {
     $sql = "SELECT * FROM Products WHERE ProductID = $product_id";
     $result = $conn->query($sql);
 
-    // Kiểm tra và hiển thị thông tin chi tiết sản phẩm
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $product = new Product(
-            $row["ProductID"],
-            $row["ProductName"],
-            $row["CategoryID"],
-            $row["Price"],
-            $row["Description"],
-            $row["StockQuantity"],
-            $row["image_url"],
-            $row["BrandID"]
-        );
-        ?>
-        <div class="row">
-            <div class="col-md-6">
-                <img src="<?= $product->img ?>" alt="<?= $product->ProductName ?>" class="img-fluid">
-            </div>
-            <div class="col-md-6">
-                <h1>
-                    <?= $product->ProductName ?>
-                </h1>
-                <p class="lead">Price: $
-                    <?= $product->Price ?>
-                </p>
-                <p>Description:
-                    <?= $product->Description ?>
-                </p>
+        // Kiểm tra và hiển thị thông tin chi tiết sản phẩm
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $product = new Product(
+                $row["ProductID"],
+                $row["ProductName"],
+                $row["CategoryID"],
+                $row["Price"],
+                $row["Description"],
+                $row["StockQuantity"],
+                $row["image_url"],
+                $row["BrandID"]
+            );
+            ?>
+            <div class="row product-details">
+                <div class="col-md-6">
+                    <img src="<?= $product->img ?>" alt="<?= $product->ProductName ?>" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <h1><?= $product->ProductName ?></h1>
+                    <p class="lead">Price: $<?= $product->Price ?></p>
+                    <p>Description: <?= $product->Description ?></p>
+                    <!-- Các thông tin khác của sản phẩm có thể được hiển thị ở đây -->
 
                 <!-- Các thông tin khác của sản phẩm có thể được hiển thị ở đây -->
 

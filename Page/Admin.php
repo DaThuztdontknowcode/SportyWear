@@ -1,25 +1,34 @@
+<!-- Trang all_products.php -->
 <!DOCTYPE html>
-<?php include '../Control/Get.php'; ?>
-<?php include '../Page/NavBar.php'; ?>
 
+<?php include 'navbar.php'; ?>
+<?php include '../Control/Get.php'; ?>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Products</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Your custom CSS file -->
     <link rel="stylesheet" href="../css/AllShoes.css">
+
+
 </head>
 
 <body>
     <div class="container-fluid mt-5 Section">
         <div class="Title_container">
             <?php
-            if (isset($_GET['query'])) {
-                $SearchText = $_GET['query'];
-                echo '<h1 class="category-title">Result for: ' . $SearchText . '</h1>';
-            }
+
+
+            echo '<h1 class="category-title">Sales statistic</h1>';
+
+
+
+
+
             ?>
         </div>
         <div class="filter-container">
@@ -61,16 +70,20 @@
         </div>
 
         <div id="searchResultsContainer" class="row">
-            <?php include '../Control/SearchControl.php'; ?>
+            <?php include '../Control/ProductShowForAd.php'; ?>
         </div>
     </div>
-
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 
-    <script>
+<?php include 'footer.php'; ?>
+
+</html>
+
+<script>
         function filterProducts() {
             var category = document.getElementById('categoryFilter').value;
             var brand = document.getElementById('brandFilter').value;
@@ -85,7 +98,7 @@
                     document.getElementById("searchResultsContainer").innerHTML = this.responseText;
                 }
             };
-            var encodedURL = encodeURI("../Control/SearchControl.php?query=<?php echo $SearchText; ?>&category=" + category + "&brand=" + brand + "&price=" + price);
+            var encodedURL = encodeURI("../Control/ProductShowForAd.php?category=" + category + "&brand=" + brand + "&price=" + price);
 
             // Log the encoded URL to the console
             console.log("Encoded URL:", encodedURL);
@@ -94,8 +107,3 @@
             xhttp.send();
         }
     </script>
-</body>
-
-<?php include 'footer.php'; ?>
-
-</html>

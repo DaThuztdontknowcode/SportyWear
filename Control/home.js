@@ -69,7 +69,9 @@ document.querySelector('.zoom-image').addEventListener('mouseleave', function() 
 function redirectToPage1() {
     window.location.href = "all_products.php?category=1";
 }
-
+function redirectToPro() {
+    window.location.href = "Products.php";
+}
 function redirectToPage2() {
     window.location.href = "all_products.php?category=2";
 }
@@ -154,4 +156,17 @@ document.addEventListener("DOMContentLoaded", function () {
             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
     }
+});
+// Lấy thẻ trang chủ và menu dropdown
+var homeLink = document.querySelector('a[href="home.php"]');
+var dropdownContent = document.querySelector('.dropdownn-content');
+// Thêm sự kiện khi menu được mở
+dropdownContent.addEventListener('mouseenter', function() {
+    // Thêm lớp "muted-bg" vào trang chủ
+    homeLink.classList.add('muted-bg');
+});
+// Thêm sự kiện khi menu được đóng
+dropdownContent.addEventListener('mouseleave', function() {
+    // Loại bỏ lớp "muted-bg" khỏi trang chủ
+    homeLink.classList.remove('muted-bg');
 });

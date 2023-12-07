@@ -2,42 +2,41 @@
 require_once '../config.php';
 require_once '../Model/Product.php';
 
-if (isset($_GET['query']) || isset($_GET['category']) || isset($_GET['min_price']) || isset($_GET['max_price'])) {
-    $searchTerm = $_GET['query'];
+if (isset($_GET['query'])) {
+    $searchTerm = isset($_GET['query']) ? $_GET['query'] : '';
+    $categoryFilter = isset($_GET['category']) ? $_GET['category'] : '';
+    $brandFilter = isset($_GET['brand']) ? $_GET['brand'] : '';
+    $priceFilter = isset($_GET['price']) ? $_GET['price'] : '';
 
-    $sort_order = isset($_GET['sort']) ? $_GET['sort'] : '';
-
+    // Truy vấn cơ sở dữ liệu để tìm kiếm sản phẩm
     $sql = "SELECT * FROM Products WHERE (ProductName LIKE '%$searchTerm%' OR Description LIKE '%$searchTerm%')";
-
-if (isset($_GET['category']) && $_GET['category'] !== '') {
-    $category = $_GET['category'];
-    $sql .= " AND CategoryID = $category";
-} else {
-    $sql .= " AND CategoryID IS NOT NULL";
-}
-
-if (isset($_GET['min_price']) && $_GET['min_price'] !== '') {
-    $min_price = $_GET['min_price'];
-    $sql .= " AND (Price >= $min_price OR Price IS NULL)";
-}
-
-if (isset($_GET['max_price']) && $_GET['max_price'] !== '') {
-    $max_price = $_GET['max_price'];
-    $sql .= " AND (Price <= $max_price OR Price IS NULL)";
-}
-
-    if ($sort_order == 'asc') {
-        $sql .= " ORDER BY Price ASC";
-    } elseif ($sort_order == 'desc') {
-        $sql .= " ORDER BY Price DESC";
+  
+    // Add category filter
+    if (!empty($categoryFilter)) {
+        $sql .= " AND CategoryID = '$categoryFilter'";
     }
 
+    // Add brand filter
+    if (!empty($brandFilter)) {
+        $sql .= " AND BrandID = '$brandFilter'";
+    }
+
+    // Add price filter
+    if (!empty($priceFilter)) {
+        // Extract min and max prices from the selected range
+        $priceRange = explode('-', $priceFilter);
+        $minPrice = $priceRange[0];
+        $maxPrice = $priceRange[1];
+        $sql .= " AND Price BETWEEN $minPrice AND $maxPrice";
+    }
+
+    // Log the SQL query to the console
+    
+    echo "<script>console.log('SQL Query:', \"$sql\");</script>";
+   
     $result = $conn->query($sql);
 
-    if (!$result) {
-        die("Query failed: " . $conn->error);
-    }
-
+    // Kiểm tra và hiển thị kết quả
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             $product = new Product(
@@ -71,5 +70,4 @@ if (isset($_GET['max_price']) && $_GET['max_price'] !== '') {
     echo "<p>Please enter a search term.</p>";
 }
 
-$conn->close();
-?>
+// Đóng kết nối cơ sở dữ liệu
