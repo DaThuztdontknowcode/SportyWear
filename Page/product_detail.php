@@ -14,7 +14,7 @@
 <body>
     <?php include 'navbar.php';?>
 
-    <div class="container mt-5 Section">
+    <div class="container-fluid mt-5 Section">
         <?php include '../Control/DetailShoe.php';?>
 
         <!-- Slider for Related Products -->

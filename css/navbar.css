@@ -1,125 +1,125 @@
 /* navbar.css */
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 .navbarr {
-    top: 0;
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-    background-color: #333;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  background-color: #333;
 }
 
 .navbarr ul li a {
-    transition: background-color 0.3s, color 0.3s;}
+  transition: background-color 0.3s, color 0.3s;}
 
-    .navbarr a:hover,
-    .dropdownn:hover .dropbtnn {
-        background-color: #ddd;
-        color: black;
+  .navbarr a:hover,
+  .dropdownn:hover .dropbtnn {
+      background-color: #ddd;
+      color: black;
 }
 
 .navbarr ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 .navbarr li {
-    float: left;
+  float: left;
 }
 
 .navbarr a,
 .dropbtnn {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 .navbarr a:hover,
 .dropdownn:hover .dropbtnn {
-    background-color: #ddd;
-    color: black;
+  background-color: #ddd;
+  color: black;
 }
 
 .dropdownn {
-    display: inline-block;
+  display: inline-block;
 }
 
 /* Updated styles for dropdown content */
 .dropdownn-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 480px; /* Adjust based on your design */
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 480px; /* Adjust based on your design */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 /* Divide into three columns */
 .dropdownn-content a {
-    color: black;
-    padding: 12px 16px;
-    display: block;
-    text-align: left;
-    float: left;
-    width: 33.33%; /* Each column takes one-third of the width */
-    box-sizing: border-box;
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+  float: left;
+  width: 33.33%; /* Each column takes one-third of the width */
+  box-sizing: border-box;
 }
 
 .dropdownn-content a:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
 .dropdownn:hover .dropdownn-content {
-    display: block;
+  display: block;
 }
 
 /* Adjustments for search-bar and submit button */
 .search-bar {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    border-radius: 20px; /* Adjust the border-radius as needed */
-    overflow: hidden; /* Ensure rounded corners are applied */
-    padding: 5px 0 20px 0; /* Adjust padding for top, right, bottom, left */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  border-radius: 20px; /* Adjust the border-radius as needed */
+  overflow: hidden; /* Ensure rounded corners are applied */
+  padding: 5px 0 20px 0; /* Adjust padding for top, right, bottom, left */
 }
 
 .search-bar form {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .search-bar input[type="text"] {
-    padding: 7px 30px;
-    margin: 0;
-    width: 600px; /* Adjust the width as needed */
-    border: none; /* Remove default input border */
-    border-radius: 20px; /* Same border-radius as the parent .search-bar */
+  padding: 7px 30px;
+  margin: 0;
+  width: 600px; /* Adjust the width as needed */
+  border: none; /* Remove default input border */
+  border-radius: 20px; /* Same border-radius as the parent .search-bar */
 }
 
 .search-bar button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    margin-left: 10px; /* Add margin to separate input and button */
-    border-top-right-radius: 20px; /* Adjust the border radius for the button */
-    border-bottom-right-radius: 20px; /* Adjust the border radius for the button */
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-left: 10px; /* Add margin to separate input and button */
+  border-top-right-radius: 20px; /* Adjust the border radius for the button */
+  border-bottom-right-radius: 20px; /* Adjust the border radius for the button */
 }
 .dropdownn:hover + .home-link,
 .home-link:hover {
-    opacity: 1;
-    transition: opacity 0.3s ease;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
