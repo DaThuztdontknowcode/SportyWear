@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 .Section{
     padding-top: 20px;
 }

@@ -148,31 +148,14 @@
         <div class="image-column">
             <img src="https://i.pinimg.com/564x/ec/2e/34/ec2e34586df8da3b918f9ef882e890ff.jpg" alt="Image 1">
             <button class="explore-btn">Explore Now</button>
-            <img id="follow-img" src="https://images.footballfanatics.com/nike-white-nba-headband_pi2694000_ff_2694897_full.jpg?_hv=2" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
+            <img id="follow-img" src="https://images.footballfanatics.com/nike-white-nba-headband_pi2694000_ff_2694897_full.jpg?_hv=2" alt="Follow Image" style="display: none; position: absolute;height: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
         </div>
         
-<<<<<<< HEAD
-            <div class="col-lg-3 col-md-4 col-sm-6 image-column">
-                <img class="img-fluid" src="https://i.pinimg.com/564x/ec/2e/34/ec2e34586df8da3b918f9ef882e890ff.jpg" alt="Image 1">
-                <button class="explore-btn">Explore Now</button>
-                <img id="follow-img" src="https://images.footballfanatics.com/nike-white-nba-headband_pi2694000_ff_2694897_full.jpg?_hv=2" alt="Follow Image" style="display: none; position: absolute;height: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
-            </div>
-         
-        
-        
-            <div class="col-lg-3 col-md-4 col-sm-6 image-column">
-                <img class="img-fluid" src="https://i.pinimg.com/564x/b1/c9/b1/b1c9b11586ded034794cf2a7f6e86f0f.jpg" alt="Image 2">
-                <button class="explore-btn" onclick="redirectToProduct44()">Explore Now</button>
-                <img id="follow-img2" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/539492/01/mod01/fnd/PNA/fmt/png/PUMA-x-TMC-Everyday-Hussle-Men's-Sweatshorts" alt="Follow Image" style="display: none; position: absolute;height: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
-            </div>
-        
-=======
         <div class="image-column">
             <img src="https://i.pinimg.com/564x/b1/c9/b1/b1c9b11586ded034794cf2a7f6e86f0f.jpg" alt="Image 2">
             <button class="explore-btn" onclick="redirectToProduct44()">Explore Now</button>
-            <img id="follow-img2" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/539492/01/mod01/fnd/PNA/fmt/png/PUMA-x-TMC-Everyday-Hussle-Men's-Sweatshorts" alt="Follow Image" style="display: none; position: absolute;heigh: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
+            <img id="follow-img2" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/539492/01/mod01/fnd/PNA/fmt/png/PUMA-x-TMC-Everyday-Hussle-Men's-Sweatshorts" alt="Follow Image" style="display: none; position: absolute;height: 300px;width:300px;border-radius: 5px;z-index: 999;"/>
         </div>
->>>>>>> 0c585b43524032d946d452a58b9cfb367a73a79d
 
         <div class="image-column">
             <img src="https://i.pinimg.com/564x/93/c7/bd/93c7bd60a0941c5a68591b6d74788cc7.jpg" alt="Image 3">

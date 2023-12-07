@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <div class="container mt-5 Section">
+    <div class="container-fluid mt-5 Section">
         <div class="Title_container">
             <?php
 

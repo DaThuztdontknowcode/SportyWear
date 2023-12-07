@@ -2,7 +2,7 @@
 // navbar.php
 include_once '../Model/userModel.php';
 // Assuming you have already started the session
-session_start();
+
 @include '../config.php';
 // Function to get the user type based on user ID
 function getUserType($userId, $conn) {
