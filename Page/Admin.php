@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <div class="container-fluid mt-5 Section">
+    <div class="container mt-5 Section">
         <div class="Title_container">
             <?php
 
@@ -70,7 +70,7 @@
         </div>
 
         <div id="searchResultsContainer" class="row">
-            <?php include '../Control/ProductShowForAd.php'; ?>
+            <?php include '../Page/AjaxAdminFilter.php'; ?>
         </div>
     </div>
     <!-- Bootstrap JS and Popper.js -->
@@ -98,7 +98,7 @@
                     document.getElementById("searchResultsContainer").innerHTML = this.responseText;
                 }
             };
-            var encodedURL = encodeURI("../Control/ProductShowForAd.php?category=" + category + "&brand=" + brand + "&price=" + price);
+            var encodedURL = encodeURI("../Page/AjaxAdminFilter.php?category=" + category + "&brand=" + brand + "&price=" + price);
 
             // Log the encoded URL to the console
             console.log("Encoded URL:", encodedURL);
