@@ -8,16 +8,23 @@ if (isset($_POST['dathang']) && ($_POST['dathang'])) {
     if (!isset($_SESSION['user_id'])) {
         header('Location: login_form.php');
         exit; // Dừng việc xử lý tiếp theo
-    }       
+    }
     $product_id = $_POST['product_id'];
+
     $user_id = $_POST['user_id'];
+
+    $select_cartID = "SELECT * FROM cart WHERE id_user = $user_id";
+    $result_cartID = mysqli_query($conn, $select_cartID);
+    $row_cartID = $result_cartID->fetch_assoc();
+    $id_cart = $row_cartID["id_cart"];
+
     $quantity = $_POST['quantity'];
 
-    $select_existCartDetail = "SELECT * FROM cartdetail WHERE ProductID = $product_id";
+    $select_existCartDetail = "SELECT * FROM cartdetail WHERE ProductID = $product_id && id_cart = $id_cart";
     $result_existCartDetail = mysqli_query($conn, $select_existCartDetail);
     $row_CartDetail = $result_existCartDetail->fetch_assoc();
     $id_ProductID = $row_CartDetail["ProductID"];
-    
+
 
     if ($id_ProductID == null) {
 
@@ -25,7 +32,7 @@ if (isset($_POST['dathang']) && ($_POST['dathang'])) {
         $result = mysqli_query($conn, $select_idCart);
         $row = $result->fetch_assoc();
         $id_Cart = $row["id_cart"];
-  
+
         if (!isset($_SESSION['cart']))
             $_SESSION['cart'] = array();
         array_push($_SESSION['cart'], $productArr);
@@ -52,7 +59,7 @@ if (isset($_POST['dathang']) && ($_POST['dathang'])) {
         $select_cartdetail = "SELECT * FROM cartdetail WHERE ProductID = $product_id";
         $result_cartdetail = mysqli_query($conn, $select_cartdetail);
         $row_cartdetail = $result_cartdetail->fetch_assoc();
-    
+
         $old_quantity = $row_cartdetail["quantity"];
         $new_quantity = $old_quantity + $quantity;
 

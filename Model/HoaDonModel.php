@@ -9,9 +9,9 @@ class HoaDonModel {
 
     }
 
-    public function AddHoaDon($id_cart) {
+    public function AddHoaDon($id_cart, $totalprice) {
 
-        $insert = "INSERT INTO hoadon(id_cart) VALUES($id_cart)";
+        $insert = "INSERT INTO hoadon(id_cart,totalprice) VALUES($id_cart,$totalprice)";
 
         $result = mysqli_query($this->conn, $insert);
 
@@ -19,9 +19,9 @@ class HoaDonModel {
 
     }
 
-    public function AddToHoaDonDetail($id_hoadon, $ProductID) {
+    public function AddToHoaDonDetail($id_hoadon, $ProductIDs, $quantities) {
 
-        $insert = "INSERT INTO hoadon(id_hoadon, ProductID) VALUES ($id_hoadon, $ProductID)";
+        $insert = "INSERT INTO chitiethoadon(id_hoadon, ProductIDs,quantities) VALUES ($id_hoadon, '".$ProductIDs."', '".$quantities."')";
 
         $result = mysqli_query($this->conn, $insert);
 

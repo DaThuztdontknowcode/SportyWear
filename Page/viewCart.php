@@ -31,7 +31,7 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/9406821d13.js" crossorigin="anonymous"></script>
-    
+
 </head>
 
 <body>
@@ -87,6 +87,7 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
                             $total = $total + ($product->Quantity * $productDetail->Price);
                         }
                         ?>
+
                 <div class="cart-view">
                     <div class="cart-item">
                         <img src='<?php echo $productDetail->img ?>' width="200px" heighth="200px"
@@ -159,29 +160,13 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
                 <div class=" d-flex justify-content-center w-100 mt-4">
                     <button class="btn-backToShop"><a href="./Products.php">Back To Shop</a></button>
                 </div>
-
                 <div class=" d-flex justify-content-center w-100 mt-4">
-                    <button class="btn-checkout"><a class="checkout" href="./addToHoaDon.php">Check Out</a></button>
+                    <button class="btn-checkout"><a class="checkout" href="./addToHoaDon.php">Check
+                            Out</a></button>
                 </div>
             </div>
         </div>
-
     </div>
-    <!-- <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const checkout = document.querySelector(".btn-checkout a");
-    if (checkout) {
-        checkout.addEventListener("click", function(event) {
-            event.preventDefault();
-
-        });
-    }
-});
-
-    </script> -->
-
-
-    <!-- </script> -->
 </body>
 
 </html>
