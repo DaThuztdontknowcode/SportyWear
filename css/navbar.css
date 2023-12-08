@@ -123,3 +123,5 @@ body {
   transition: opacity 0.3s ease;
 }
 
+.navbarr a:hover, .dropdownn:hover .dropbtnn {
+  text-decoration: none;}

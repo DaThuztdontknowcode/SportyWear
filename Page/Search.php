@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="container-fluid mt-5 Section">
+    <div class="container mt-5 Section">
         <div class="Title_container">
             <?php
             if (isset($_GET['query'])) {
@@ -61,7 +61,7 @@
         </div>
 
         <div id="searchResultsContainer" class="row">
-            <?php include '../Control/SearchControl.php'; ?>
+            <?php include '../Page/AjaxSearchFilter.php'; ?>
         </div>
     </div>
 
@@ -85,7 +85,7 @@
                     document.getElementById("searchResultsContainer").innerHTML = this.responseText;
                 }
             };
-            var encodedURL = encodeURI("../Control/SearchControl.php?query=<?php echo $SearchText; ?>&category=" + category + "&brand=" + brand + "&price=" + price);
+            var encodedURL = encodeURI("../Page/AjaxSearchFilter.php?query=<?php echo $SearchText; ?>&category=" + category + "&brand=" + brand + "&price=" + price);
 
             // Log the encoded URL to the console
             console.log("Encoded URL:", encodedURL);
