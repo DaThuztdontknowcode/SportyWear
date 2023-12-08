@@ -70,8 +70,6 @@ while ($row = $result_cartdetail_sql->fetch_assoc()) {
 $result_add_chitiethoadon = $hoadon->AddToHoaDonDetail($max_idHoaDon, $productIDs, $quantities);
 
 
-
-
-header('location: ViewHoaDon.php');
+header('location: ../Page/ViewHoaDon.php');
 
 ?>
