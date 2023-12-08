@@ -4,6 +4,7 @@ require_once '../Model/HoaDonModel.php';
 require_once '../Model/DetailCartModel.php';
 require_once '../Model/ChiTietHoaDon.php';
 
+
 session_start();
 $user_id = $_SESSION['user_id'];
 
@@ -54,6 +55,8 @@ $result_cartdetail_sql = $conn->query($select_cartdetail_sql);
 $productIDs = "";
 $quantities = "";
 
+$deleteProduct = new DetailCartModel($conn);
+
 while ($row = $result_cartdetail_sql->fetch_assoc()) {
 
     $ProductID = $row["ProductID"];
@@ -61,11 +64,14 @@ while ($row = $result_cartdetail_sql->fetch_assoc()) {
     $productIDs = $productIDs . "$ProductID,";
     $quantities = $quantities . "$quantity,";
 
+    $deleteProduct->RemoveCartDetail($id_Cart, $ProductID);
 }
 
 $result_add_chitiethoadon = $hoadon->AddToHoaDonDetail($max_idHoaDon, $productIDs, $quantities);
 
 
-header('location: ../Page/viewCart.php');
+
+
+header('location: ViewHoaDon.php');
 
 ?>
