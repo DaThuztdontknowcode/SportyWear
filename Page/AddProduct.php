@@ -16,7 +16,7 @@
 <body>
 
 
-    <div class="container-fluid mt-5  Container-animate Section">
+    <div class="container mt-5  Container-animate Section">
     <h2 class="mb-4"><p>Add product</p></h2>
         <form action="../Control/Add.php" method="post" enctype="multipart/form-data">
             <div class="form-group">

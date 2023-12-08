@@ -1,11 +1,39 @@
 *{
     box-sizing: border-box;
 }
+/* Thêm CSS sau vào file stylesheet của bạn hoặc trực tiếp vào file HTML (nếu muốn) */
+
+/* Thiết lập form theo chiều dọc */
+.FormContain form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Khoảng cách giữa các phần tử trong form */
+.FormContain form> * {
+    margin-bottom: 10px;
+}
+
+.FormContain form .btn {
+    margin-top: 20px;
+}
+
+/* Tạo độ rộng cho input và select */
+.FormContain input, .FormContain form select {
+    width: 50%;
+    padding: 10px 0px;
+    border: #ddd 1px solid;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
 
 .Section{
     padding-top: 20px;
 }
 .img-fluid{
+    height: 350px;
+    float: right;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
@@ -63,4 +91,9 @@
 .Related_Wrap{
     animation: fadeInUp 1s ease-in-out; /* Sử dụng animation */
     margin-top: 50px;
+}
+
+.product-image {
+    max-width: 100%; /* Giữ tỷ lệ khung hình và thu nhỏ chiều rộng tối đa */
+    height: auto;
 }

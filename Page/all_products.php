@@ -113,7 +113,8 @@
             </div>
 
             <div id="searchResultsContainer" class="row">
-                <?php include '../Control/AllProductShoes.php'; ?>
+
+            <?php include '../Page/AjaxFilter.php'; ?>
 
             </div>
         </div>
@@ -147,9 +148,9 @@
         <?php
         if (isset($_GET['category'])) {
             $selectedCategory = $_GET['category'];
-            echo 'encodedURL = encodeURI("../Control/AllProductShoes.php?category=" + ' . $selectedCategory . ' + "&brand=" + brand + "&price=" + price);';
+            echo 'encodedURL = encodeURI("../Page/AjaxFilter.php?category=" + ' . $selectedCategory . ' + "&brand=" + brand + "&price=" + price);';
         } else {
-            echo 'encodedURL = encodeURI("../Control/AllProductShoes.php?brand=" + brand + "&price=" + price);';
+            echo 'encodedURL = encodeURI("../Page/AjaxFilter.php?brand=" + brand + "&price=" + price);';
         }
         ?>
 

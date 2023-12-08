@@ -161,7 +161,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Nike Golf</h5>
                     <p class="card-text">Conquer any course in style.</p>
-                    <a href="#" class="btn btn-primary">Shop</a>
+                    <a href="product_detail.php?product_id=85" class="btn btn-primary">Shop</a>
                 </div>
             </div>
         </div>
@@ -228,7 +228,7 @@
                     <p class="card-text">
                         "I absolutely love the products from this brand. They are not only stylish but also comfortable."
                     </p>
-                    <a href="product_detail.php?product_id=31" class="text-secondary text-decoration-none">
+                    <a href="product_detail.php?product_id=10" class="text-secondary text-decoration-none">
                         See More
                     </a>
                     <p class="text-secondary">SUPER MODEL</p>
@@ -249,7 +249,7 @@
                                 <p class="card-text">
                                     "I've been a fan of these products for years. inner consistensy.Quality and style - they have it all."
                                 </p>
-                                <a href="product_detail.php?product_id=27" class="text-secondary text-decoration-none">
+                                <a href="product_detail.php?product_id=13" class="text-secondary text-decoration-none">
                                     See More
                                 </a>
                                 <p class="text-secondary">SINGER</p>
@@ -289,7 +289,7 @@
                     <p class="card-text">
                         "I've been a loyal customer of this brand for years. negative space collage movement. .Their products are top-notch."
                     </p>
-                    <a href="product_detail.php?product_id=15" class="text-secondary text-decoration-none">
+                    <a href="product_detail.php?product_id=56" class="text-secondary text-decoration-none">
                         See More
                     </a>
                     <p class="text-secondary">RAPPER</p>
@@ -298,12 +298,9 @@
         </div>
     </div>
 </section>
-
-    
-
-    
     <button id="scrollToTopBtn">&#8679;</button>
 </main>
 <script src="../Control/home.js"></script>
     </body>
+    <?php include 'footer.php'; ?>   
 </html>
