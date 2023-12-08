@@ -6,9 +6,9 @@ class DetailCartModel
 
     public function __construct($conn)
     {
-        
+
         $this->conn = $conn;
-        
+
     }
 
     public function AddToCartDetail($id_cart, $ProductID, $quantity)
@@ -35,7 +35,7 @@ class DetailCartModel
 
     public function UpdateCartDetail($id_cart, $ProductID, $new_quantity)
     {
-        
+
         $update = "UPDATE cartdetail SET quantity = $new_quantity WHERE id_cart = $id_cart AND ProductID = $ProductID";
 
         $result = mysqli_query($this->conn, $update);
@@ -44,15 +44,6 @@ class DetailCartModel
 
     }
 
-    // public function TotalCartDetail($id_cart)
-    // {
-    //     $select = "SELECT * FROM cartdetail WHERE id_cart = $id_cart";
-
-    //     $result = mysqli_query($this->conn, $select);
-
-    //     return $result;
-
-    // }
 }
 
 ?>

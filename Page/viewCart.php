@@ -160,7 +160,7 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
                     <button class="btn-backToShop"><a href="./Products.php">Back To Shop</a></button>
                 </div>
                 <div class=" d-flex justify-content-center w-100 mt-4">
-                    <button class="btn-checkout"><a class="checkout" href="./addToHoaDon.php">Check
+                    <button class="btn-checkout"><a class="checkout" href="../Control/addToHoaDon.php">Check
                             Out</a></button>
                 </div>
             </div>

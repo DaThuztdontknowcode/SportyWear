@@ -66,6 +66,6 @@ while ($row = $result_cartdetail_sql->fetch_assoc()) {
 $result_add_chitiethoadon = $hoadon->AddToHoaDonDetail($max_idHoaDon, $productIDs, $quantities);
 
 
-header('location: viewCart.php');
+header('location: ../Page/viewCart.php');
 
 ?>
