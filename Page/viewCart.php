@@ -161,35 +161,9 @@ if (isset($_POST["update_quantity"]) && $_POST["update_quantity"]) {
                     <button class="btn-backToShop"><a href="./Products.php">Back To Shop</a></button>
                 </div>
                 <div class=" d-flex justify-content-center w-100 mt-4">
-                    <button class="btn-checkout"><a class="checkout" href="./addToHoaDon.php">Check
+                    <button class="btn-checkout"><a class="checkout" href="../Control/addToHoaDon.php">Check
                             Out</a></button>
-                    <button id="checkoutButton">Thanh Toán</button>
-                    <div id="productList">
-                    </div>                
-                    <script>
-            var checkoutButton = document.getElementById("checkoutButton");
-            var productList = document.getElementById("productList");
-            checkoutButton.addEventListener("click", function() {
-                console.log("Nút thanh toán đã được ấn.");
-            // Lấy danh sách sản phẩm từ cột ProductIDs trong hoadonchitiet
-            var productIDs = "<?php echo $row_cartID['ProductIDs']; ?>";
-            var productsArray = productIDs.split(",");
-            productList.innerHTML = "<h3>Sản phẩm trong đơn hàng:</h3>";
-            for (var i = 0; i < productsArray.length; i++) {
-            var productID = productsArray[i];
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "get_product_info.php?productID=" + productID, true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var productInfo = JSON.parse(xhr.responseText);
-                    var productElement = document.createElement("div");
-                    productElement.innerHTML = "Sản phẩm: " + productInfo.productName + " - Số lượng: " + productInfo.quantity;
-                    productList.appendChild(productElement);
-                }
-            };
-            xhr.send();
-            }})
-                    </script>   
+ 
                 </div>
             </div>
         </div>

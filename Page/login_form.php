@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
         if ($user['user_type'] == 'admin') {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['admin_name'] = $user['name'];
-            header('location: admin_dashboard.php');
+            header('location: admin.php');
         } else {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['name'];
