@@ -45,6 +45,7 @@ if (isset($_POST['dathang']) && ($_POST['dathang'])) {
         $cart = new DetailCartModel($conn);
         $cart->AddToCartDetail($id_Cart, $product_id, $quantity);
 
+        header('location: ../Page/viewCart.php');
 
         try {
             mysqli_close($conn);
