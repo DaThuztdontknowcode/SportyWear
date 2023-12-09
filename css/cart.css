@@ -157,13 +157,20 @@ table {
    cursor: pointer;
 }
 
+.btn-backToShop a {
+   padding: 18px 20px !important;
+}
+
+.btn-checkout a {
+   padding: 18px 80px !important;
+}
+
 .btn-backToShop a,
 .btn-checkout a {
    font-size: 20px;
    font-weight: 300;
    text-decoration: none;
    color: #fff;
-   padding: 18px 20px !important;
 }
 
 .quantity {
@@ -188,11 +195,14 @@ table {
 /* .edit-quantity input[type="submit"] {
    background-color: coral;
 } */
-.container {
-   margin-top: 100px !important;
-   margin-bottom: 100px !important;
 
+.container {
+   margin-top: 50px !important;
+   margin-bottom: 50px !important;
+   /* align-items: unset !important; */
 }
+
+
 /* CSS cho modal */
 .modal {
    display: none; /* Mặc định ẩn modal */
@@ -226,4 +236,20 @@ table {
 /* CSS để hiển thị modal khi cần */
 .show-modal {
    display: block;
+}
+
+
+.alert {
+   display: block; /* Hiển thị hộp thoại */
+   margin: 10px; /* Khoảng cách với các phần tử xung quanh */
+}
+
+.success-alert {
+   background-color: #4CAF50; /* Màu xanh lá cây */
+   color: #fff; /* Màu chữ trắng */
+   padding: 15px; /* Khoảng cách giữa nội dung và mép hộp */
+   border-radius: 5px; /* Độ cong của các góc */
+   border: 1px solid #45a049; /* Đường viền mảnh màu xanh lá cây */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng đổ */
+   /* Thêm các kiểu CSS khác nếu cần */
 }
