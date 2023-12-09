@@ -21,14 +21,7 @@
     <div class="container mt-5 Section">
         <div class="Title_container">
             <?php
-
-
             echo '<h1 class="category-title">Sales statistic</h1>';
-
-
-
-
-
             ?>
         </div>
         <div class="filter-container">
@@ -36,7 +29,6 @@
             <select id="categoryFilter" onchange="filterProducts()">
                 <option value="" disabled selected>Select Category</option>
                 <option value="" selected>All Category</option>
-
                 <?php
                 // Assume you have a function to get categories from the database
                 $categories = getCategories();
@@ -78,11 +70,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 <?php include 'footer.php'; ?>
-
 </html>
-
 <script>
         function filterProducts() {
             var category = document.getElementById('categoryFilter').value;
@@ -92,17 +81,14 @@
             // Use AJAX to reload only the SearchControl
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
-
                 if (this.readyState == 4 && this.status == 200) {
                     console.log("Server Response:", this.responseText);
                     document.getElementById("searchResultsContainer").innerHTML = this.responseText;
                 }
             };
             var encodedURL = encodeURI("../Page/AjaxAdminFilter.php?category=" + category + "&brand=" + brand + "&price=" + price);
-
             // Log the encoded URL to the console
             console.log("Encoded URL:", encodedURL);
-
             xhttp.open("GET", encodedURL, true);
             xhttp.send();
         }

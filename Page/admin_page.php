@@ -3,6 +3,7 @@
 include_once '../Model/userModel.php';
 session_start();
 $name = $_SESSION['admin_name'];
+
 $user_id = $_SESSION['user_id'];
 if(!isset($_SESSION['admin_name'])){
     header('location:login_form.php');
@@ -18,7 +19,6 @@ if(!isset($_SESSION['admin_name'])){
 </head>
 <body>
 <?php include 'AdminNavbar.php'; ?>   
-
     <div class="container">
     <div class="content">
       <div class="img">
@@ -35,12 +35,13 @@ if(!isset($_SESSION['admin_name'])){
       ?>
       </div>
       <h3>hi, <span>admin</span></h3>
-      <h1>welcome <span><?php echo $name; ?></span></h1>      <p>this is an admin page</p>
+      <h1>welcome <span><?php echo $name; ?></span></h1><p>this is an admin page</p>
       <a href="update_profile_page_admin.php" class="btn">update profile</a>
       <a href="../Control/logout.php" class="btn"> 
       logout</a>
       </div>
    </div>
-    </div>    
+    </div>   
+    <?php include 'footer.php'; ?> 
 </body>
 </html>

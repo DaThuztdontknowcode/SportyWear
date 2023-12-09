@@ -4,14 +4,11 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 $name = $_SESSION['user_name'];
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
-
 ?>
 
 <?php include '../Control/CheckUserType.php'; ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +18,6 @@ $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script>
         "use strict";
-
         ! function() {
             var t = window.driftt = window.drift = window.driftt || [];
             if (!t.init) {
@@ -60,29 +56,8 @@ $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
     <nav class="navbarr">
         <ul>
             <li><a href="home.php">Home</a></li>
-            <li class="dropdownn">
-                <a href="../Page/Products.php" class="dropbtnn">Product</a>
-                <div class="dropdownn-content">
-                    <a href="../Page/all_products.php?category=1">Shoe</a>
-
-                    <a href="../Page/all_products.php?category=2">T-Shirt</a>
-                    <!-- Add more items -->
-                    <a href="../Page/all_products.php?category=3">Top</a>
-                    <a href="../Page/all_products.php?category=4">Sock</a>
-                    <a href="../Page/all_products.php?category=5">Tight</a>
-                    <a href="../Page/all_products.php?category=6">Short</a>
-                    <a href="../Page/all_products.php?category=7">Jacket</a>
-                    <a href="../Page/all_products.php?category=8">Headwear</a>
-                    <a href="../Page/all_products.php?category=9">Bra</a>
-                    <a href="../Page/all_products.php?category=10">Skirt dress</a>
-                    <a href="../Page/all_products.php?category=11">Polo</a>
-                    <a href="../Page/all_products.php?category=12">Sandal</a>
-                    <a href="../Page/all_products.php?category=13">Sweatshirt</a>
-                    <a href="../Page/all_products.php?category=14">Accessories</a>
-                </div>
-            </li>
             <?php
-            // Display the "Admin" button conditionally
+            // Kiểm tra userType và hiển thị list item "Product" nếu không phải admin
             if (isset($_SESSION['user_id'])) {
                 $userId = $_SESSION['user_id'];
                 $userType = getUserType($userId, $conn);
@@ -91,12 +66,46 @@ $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
                 echo '<script>';
                 echo 'console.log("User Type:", ' . json_encode($userType) . ');';
                 echo '</script>';
-
+                if ($userType !== 'admin') {
+                    echo '<li class="dropdownn">';
+                    echo '<a href="../Page/Products.php" class="dropbtnn">Product</a>';
+                    echo '<div class="dropdownn-content">';
+                    echo '<a href="../Page/all_products.php?category=1">Shoe</a>';
+                    echo '<a href="../Page/all_products.php?category=2">T-Shirt</a>';
+                    echo '<a href="../Page/all_products.php?category=3">Top</a>';
+                    echo '<a href="../Page/all_products.php?category=4">Sock</a>';
+                    echo '<a href="../Page/all_products.php?category=5">Tight</a>';
+                    echo '<a href="../Page/all_products.php?category=6">Short</a>';
+                    echo '<a href="../Page/all_products.php?category=7">Jacket</a>';
+                    echo '<a href="../Page/all_products.php?category=8">Headwear</a>';
+                    echo '<a href="../Page/all_products.php?category=9">Bra</a>';
+                    echo '<a href="../Page/all_products.php?category=10">Skirt dress</a>';
+                    echo '<a href="../Page/all_products.php?category=11">Polo</a>';
+                    echo '<a href="../Page/all_products.php?category=12">Sandal</a>';
+                    echo '<a href="../Page/all_products.php?category=13">Sweatshirt</a>';
+                    echo '<a href="../Page/all_products.php?category=14">Accessories</a>';
+                    // Thêm các mục khác ở đây
+                    echo '</div>';
+                    echo '</li>';
+                }
+            }
+            ?>
+            
+            <?php
+            // Display the "Admin" button conditionally
+            if (isset($_SESSION['user_id'])) {
+                $userId = $_SESSION['user_id'];
+                $userType = getUserType($userId, $conn);
+                // Output result to the console
+                echo '<script>';
+                echo 'console.log("User Type:", ' . json_encode($userType) . ');';
+                echo '</script>';
                 if ($userType === 'admin') {
                     echo '<li  class="dropdownn "><a href="../Page/Admin.php" class="dropbtnn">Admin</a>';
                     echo '<div class="dropdownn-content ">';
                     echo '<a href="../Page/Admin.php">Edit</a>';
                     echo ' <a href="../Page/AddProduct.php">Add</a>';
+                    echo ' <a href="../Page/ViewHoaDon.php">DonHang</a>';
                     echo '   </div>';
                     echo '</li>';
                 }
@@ -108,9 +117,11 @@ $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 
 
             <?php
-            if (isset($_SESSION['user_id'])) {
+            if (isset($_SESSION['user_id']) && $userType === 'user') {
                 echo '<li style="float: right;"><a href="./viewCart.php"><i class="fa-solid fa-shopping-cart"></i></a></li>';
                 echo '<li style="float: right;"><a href="../Page/user_page.php"><i class="fa-solid fa-user"></i></a></li>';
+            } else if (isset($_SESSION['user_id'])&& $userType === 'admin')  {
+                echo '<li style="float: right;"><a href="../Page/admin_page.php"><i class="fa-solid fa-user"></i></a></li>';
             } else {
                 echo '<li style="float: right;"><a href="login_form.php">Sign In</a></li>';
                 echo '<li style="float: right;"><a href="register_form.php">Sign Up</a></li>';

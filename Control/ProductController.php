@@ -67,7 +67,7 @@ class ProductController {
         $products = [];
 
         // Query data from the database
-        $sql = "SELECT * FROM Products  limit  12";
+        $sql = "SELECT * FROM Products  limit  16";
         $result = $this->conn->query($sql);
 
         // Check and display data

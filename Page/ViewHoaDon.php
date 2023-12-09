@@ -9,8 +9,8 @@
 </head>
 
 <body>
+<?php include 'navbar.php'; ?>
     <?php
-
     require_once '../config.php';
     require_once '../Model/HoaDonModel.php';
     require_once '../Model/ChiTietHoaDon.php';
@@ -80,7 +80,6 @@
                         }
                     }
                 }
-
             }
         }
     }
@@ -89,6 +88,8 @@
 </tbody>
 </table>";
     ?>
+    <?php include 'footer.php'; ?>
+
 </body>
 
 </html>
