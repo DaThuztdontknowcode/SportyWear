@@ -8,7 +8,7 @@ require_once '../Model/HoaDonModel.php'; // Thêm lớp HoaDonModel
 
 if (isset($_POST['dathang']) && ($_POST['dathang'])) {
     if (!isset($_SESSION['user_id'])) {
-        header('Location: login_form.php');
+        header('Location: ../Page/login_form.php');
         exit; // Dừng việc xử lý tiếp theo
     }
     $product_id = $_POST['product_id'];

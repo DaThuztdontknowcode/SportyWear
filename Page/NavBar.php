@@ -61,7 +61,6 @@ $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
             if (isset($_SESSION['user_id'])) {
                 $userId = $_SESSION['user_id'];
                 $userType = getUserType($userId, $conn);
-
                 // Output result to the console
                 echo '<script>';
                 echo 'console.log("User Type:", ' . json_encode($userType) . ');';
@@ -88,6 +87,8 @@ $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
                     echo '</div>';
                     echo '</li>';
                 }
+            }else  {
+                echo '</script>';
             }
             ?>
             
