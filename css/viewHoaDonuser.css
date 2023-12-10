@@ -16,7 +16,18 @@ body {
     margin: 0;
   }
 
-
+  .back {
+    margin: 10px;
+    background-color: #9b9b9b; /* Button background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* Remove button border */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    border-radius: 5px;
+}
+.back:hover {
+  background-color: #ff5050;
+}
   h2 {
     text-align: center;
     color: #333;

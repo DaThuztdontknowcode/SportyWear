@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 function redirectToProduct44() {
-    window.location.href = '../Page/product_detail.php?product_id=44';
+    window.location.href = '../Page/product_detail.php?product_id=79';
 }
 
 

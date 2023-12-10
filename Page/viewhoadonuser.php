@@ -37,6 +37,8 @@
     echo "
     <div class=".'viewHoadon'."> 
     <h1>Lịch sử mua hàng</h1>
+    <button class=".'back'." onclick=".'back()'.">Quay lại giỏ hàng</button>
+
     <div class=".'search-container'.">
         <input type=".'text'." id=".'datepicker'." placeholder=".'Chọn ngày)'." autocomplete=".'off'.">
         </div>
@@ -125,6 +127,9 @@
     function searchHistory(selectedDate) {
         // Redirect đến trang lịch sử mua hàng với tham số ngày
         window.location.href = "viewHoaDonuser.php?date=" + selectedDate;
+    }
+    function back(){
+        window.location.href="viewCart.php"
     }
     </script>
 </body>

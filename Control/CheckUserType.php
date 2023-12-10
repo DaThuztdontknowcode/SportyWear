@@ -1,5 +1,4 @@
 <?php
-// navbar.php
 include_once '../Model/userModel.php';
 // Assuming you have already started the session
 
