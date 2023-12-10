@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/viewHoaDon.css">
+    <link rel="stylesheet" href="../css/viewHoaDonuser.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -13,9 +13,8 @@
 </head>
 
 <body>
-session_start();  // Start a session if not already started
-
-<?php include 'navbar.php'; ?>
+    session_start();  // Start a session if not already started
+    <?php include 'navbar.php'; ?> 
     <?php
     require_once '../config.php';
     require_once '../Model/HoaDonModel.php';
@@ -25,25 +24,26 @@ session_start();  // Start a session if not already started
     } else {
         $searchDate = ""; // Nếu không có tham số ngày, mặc định là trống
     }
+    // Retrieve the user ID from the session
+    $userIDInSession = $_SESSION['user_id']; // Replace 'user_id' with your actual session variable name
+
     $select_viewhoadon = "SELECT ch.*, h.created_at
                       FROM chitiethoadon ch
                       JOIN hoadon h ON ch.id_hoadon = h.id_hoadon";
     if (!empty($searchDate)) {
         $select_viewhoadon .= " WHERE DATE(h.created_at) = '$searchDate'";
-    } 
+    }                  
     $result_viewhoadon = mysqli_query($conn, $select_viewhoadon);
     echo "
     <div class=".'viewHoadon'."> 
-    <h1>Danh sách đơn hàng</h1>
+    <h1>Lịch sử mua hàng</h1>
     <div class=".'search-container'.">
         <input type=".'text'." id=".'datepicker'." placeholder=".'Chọn ngày)'." autocomplete=".'off'.">
         </div>
     <table>
         <thead>
             <tr>
-                <th>ID User</th>
                 <th>ID Hóa đơn</th>
-                <th>ID giỏ hàng</th>
                 <th>ID product</th>
                 <th>Name product</th>
                 <th>Price product</th>
@@ -53,13 +53,13 @@ session_start();  // Start a session if not already started
         </thead>
         <tbody>";
     while ($row = $result_viewhoadon->fetch_assoc()) {
-        // select trường dữ liệu từ bảng hóa đơn 
+        // select trường dữ liệu từ bảng hóa đơn
         $idHoaDon = $row["id_hoadon"];
         $productIdsString = $row["ProductIDs"];
         $quantities = $row["quantities"];
         $createdAt = $row["created_at"];
 
-        // select all id_cart từ bảng hóa đơn 
+        // select all id_cart từ bảng hóa đơn
         $select_idCarts = "SELECT * FROM hoadon WHERE id_hoadon = $idHoaDon";
         $result_idCarts = mysqli_query($conn, $select_idCarts);
         while ($row_idCarts = $result_idCarts->fetch_assoc()) {
@@ -70,35 +70,35 @@ session_start();  // Start a session if not already started
 
             while ($row_idUsers = $result_idUsers->fetch_assoc()) {
                 $id_user = $row_idUsers["id_user"];
-                $productIdsArray = explode(",", $productIdsString);
-                $count = 0;
-                $quantitiesArray = explode(",", $quantities);
-                foreach ($productIdsArray as $productId) {
-                    if ($productId != "") {
-                        // Select thông tin sản phẩm từ bảng Product
+                // Compare the user ID from the database with the user ID from the session
+                if ($id_user == $userIDInSession) {
+                    $productIdsArray = explode(",", $productIdsString);
+                    $count = 0;
+                    $quantitiesArray = explode(",", $quantities);
+                    foreach ($productIdsArray as $productId) {
                         if ($productId != "") {
-                            $select_infoProduct = "SELECT * FROM products WHERE ProductID = $productId";
-                            $result_infoProduct = mysqli_query($conn, $select_infoProduct);
-                            while ($row_infoProduct = $result_infoProduct->fetch_assoc()) {
-                                $nameProduct = $row_infoProduct["ProductName"];
-                                $priceProduct = $row_infoProduct["Price"];
-                                if ($quantitiesArray[$count] != "") {
-                                    echo " 
-                                    <tr>
-                                        <td>$id_user</td>
-                                        <td>$idHoaDon</td>
-                                        <td>$id_cart</td>
-                                        <td>$productId</td>
-                                        <td>$nameProduct</td>
-                                        <td>$priceProduct</td>
-                                        <td>$quantitiesArray[$count]</td>
-                                        <td>$createdAt</td>
-                                    </tr>
-                                    ";
-                                    $count = $count + 1;
+                            // Select thông tin sản phẩm từ bảng Product
+                            if ($productId != "") {
+                                $select_infoProduct = "SELECT * FROM products WHERE ProductID = $productId";
+                                $result_infoProduct = mysqli_query($conn, $select_infoProduct);
+                                while ($row_infoProduct = $result_infoProduct->fetch_assoc()) {
+                                    $nameProduct = $row_infoProduct["ProductName"];
+                                    $priceProduct = $row_infoProduct["Price"];
+                                    if ($quantitiesArray[$count] != "") {
+                                        echo "
+                                        <tr>
+                                            <td>$idHoaDon</td>
+                                            <td>$productId</td>
+                                            <td>$nameProduct</td>
+                                            <td>$priceProduct</td>
+                                            <td>$quantitiesArray[$count]</td>
+                                            <td>$createdAt</td>
+                                        </tr>
+                                        ";
+                                        $count = $count + 1;
+                                    }
                                 }
                             }
-
                         }
                     }
                 }
@@ -106,7 +106,7 @@ session_start();  // Start a session if not already started
         }
     }
 
-        echo "
+    echo "
         </tbody>
         </table>
         </div>";
@@ -124,7 +124,7 @@ session_start();  // Start a session if not already started
 
     function searchHistory(selectedDate) {
         // Redirect đến trang lịch sử mua hàng với tham số ngày
-        window.location.href = "viewHoaDon.php?date=" + selectedDate;
+        window.location.href = "viewHoaDonuser.php?date=" + selectedDate;
     }
     </script>
 </body>

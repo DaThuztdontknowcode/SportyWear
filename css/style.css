@@ -15,7 +15,7 @@ body{
 
 .container {
    padding-top: 35px;
-    margin-bottom: 25px;
+   margin-bottom: 25px;
    min-height: 100vh;
    display: flex;
    align-items: center;

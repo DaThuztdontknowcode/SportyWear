@@ -19,7 +19,7 @@ if ($result->num_rows > 0) {
         echo '<img src="' . $product->img . '" class="card-img-top" alt="' . $product->ProductName . '">';
         echo '<div class="card-body">';
         echo '<h5 class="card-title">' . $product->ProductName . '</h5>';
-        echo '<p class="card-text">' . $product->Description . '</p>';
+        echo '<p class="card-text"> Price: ' . $product->Price . '</p>';
         echo '</div>';
         echo '<a href="./product_detail.php?product_id=' . $product->ProductID . '" class="btn btn-primary">View Details</a>';
         echo '</div>';

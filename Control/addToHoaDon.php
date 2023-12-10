@@ -68,8 +68,10 @@ while ($row = $result_cartdetail_sql->fetch_assoc()) {
 
 $result_add_chitiethoadon = $hoadon->AddToHoaDonDetail($max_idHoaDon, $productIDs, $quantities);
 
-if ($userType === 'admin') {
-header('location: ../Page/ViewHoaDon.php');} else {
-    header('location: ../Page/ViewCart.php');
-}
+// if ($userType === 'admin') {
+// header('location: ../Page/ViewHoaDon.php');} else {
+//     header('location: ../Page/ViewCart.php');
+// }
+
+header('location: ../Page/viewhoadonuser.php?msg=thanhcong');
 ?>

@@ -4,7 +4,10 @@ body {
     margin: 0;
     padding: 0;
   }
-
+.viewHoadon{
+  padding-top: 25px;
+  min-height: 659px;
+}
   h1 {
     text-align: center;
     color: #333;
@@ -47,32 +50,33 @@ body {
   tbody tr:hover {
     background-color: #ddd;
   }
-  .search-container {
-    margin: 20px 0;
-    text-align: center;
-  }
-  
-  #datepicker {
-    width: 200px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* Tùy chỉnh nút tìm kiếm */
-  #search-button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-left: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  #search-button:hover {
-    background-color: #0056b3;
-  }
+  /* CSS cho thanh lọc */
+.search-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+#datepicker {
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Tùy chỉnh nút tìm kiếm */
+#search-button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+  background-color: #0056b3;
+}

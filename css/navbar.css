@@ -125,3 +125,16 @@ body {
 
 .navbarr a:hover, .dropdownn:hover .dropbtnn {
   text-decoration: none;}
+  @media (max-width: 800px) {
+    .navbarr ul li {
+      display: none; /* Hide all list items by default */
+  }
+
+  .navbarr ul li:first-child {
+      display: inline-block; /* Display the first list item (Home) */
+  }
+
+  .navbarr ul li.search-bar {
+     display: none;
+  }
+}

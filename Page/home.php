@@ -21,7 +21,7 @@
 <header>
     <div class="container-fluid p-0">
         <!-- Background image or slideshow here -->
-        <div class="header-background" style="background-image: url('https://i.pinimg.com/736x/87/49/15/8749155a4b1180243f283384e55981de.jpg');">
+        <div class="header-background" style="background-image: url('https://i.pinimg.com/564x/0a/c9/36/0ac936aa6080e1bff6205ef3e3ba6ef5.jpg');  ">
             <!-- Overlay with Opacity to darken the image for text visibility -->
             <div class="header-overlay" style="background: rgba(0, 0, 0, 0.5);">
                 <div class="container text-center">
